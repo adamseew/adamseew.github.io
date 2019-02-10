@@ -1,37 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Adam's hidden tavern</title>
-<meta charset="utf-8" />
-<style type="text/css">
-body{background-color:#F9EACB;text-align:center;}
-p{text-align:justify;}
-div{max-width:500px;display:inline-block;vertical-align:top;padding:0 20px 0 20px;}
-section header{vertical-align:middle;}
-</style>
+  <title>Adam's hidden tavern</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      font-family: serif;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {
+      background-color: #f9eacb;
+      
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+      }
+      .row.content {height: auto;} 
+    }
+
+    p {
+      text-align:justify;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    footer {
+      padding: 28px;
+    }
+  </style>
 </head>
 <body>
-<header>
-<div style="max-width:1000px !important;">
-<p style="font-weight:bold;">Adam Seewald</p>
-<p>PhD student in Aerial Robotics at the University of Southern Denmark<br/>
-adam <i>at</i> seewald <i>dot</i> email<br/>
-&Oslash;27-603a-2</p>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+
+    <div class="col-xm-10 col-sm-8">
+      <div class="row">
+        <div class="col-sm-12">
+            <h4>Adam Seewald</h4>
+            <p>PhD student in Aerial Robotics at the University of Southern Denmark<br/>
+            adam <i>at</i> seewald <i>dot</i> email<br/>
+            &Oslash;27-603a-2</p>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="md_633.jpg" width="400px"/>
+        </div>
+
+        <div class="col-sm-6">
+          <p>Consider the subtleness of the sea; how its most dreaded creatures glide under water, unapparent for the most part, and treacherously hidden beneath the loveliest tints of azure. Consider also the devilish brilliance and beauty of many of its most remorseless tribes, as the dainty embellished shape of many species of sharks. Consider, once more, the universal cannibalism of the sea; all whose creatures prey upon each other, carrying on eternal war since the world began.</p>
+          <p>Consider all this; and then turn to the green, gentle, and most docile earth; consider them both, the sea and the land; and do you not find a strange analogy to something in yourself? For as this appalling ocean surrounds the verdant land, so in the soul of man there lies one insular Tahiti, full of peace and joy, but encompassed by all the horrors of the half-known life. God keep thee! Push not off from that isle, thou canst never return!</p>
+          <p style="text-align:right;">(H. Melville, Moby-Dick, 1851)</p>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <a href="https://www.seashepherdglobal.org/" target="_blank">
+            <img src="sea-shepherd-logo.png" style="width:84px !important;"/>
+          </a>
+        </div>
+      </div>
+      <br />
+
+      <br />
+    </div>
+
+    <div class="col-xm-0 col-sm-2">
+    </div>
+  </div>
 </div>
-</header>
-<section>
-<div>
-<h2>Adam's hidden tavern</h2>
-<img src="md_633.jpg" width="500px"/>
-</div>
-<div>
-<p>Consider the subtleness of the sea; how its most dreaded creatures glide under water, unapparent for the most part, and treacherously hidden beneath the loveliest tints of azure. Consider also the devilish brilliance and beauty of many of its most remorseless tribes, as the dainty embellished shape of many species of sharks. Consider, once more, the universal cannibalism of the sea; all whose creatures prey upon each other, carrying on eternal war since the world began.</p>
-<p>Consider all this; and then turn to the green, gentle, and most docile earth; consider them both, the sea and the land; and do you not find a strange analogy to something in yourself? For as this appalling ocean surrounds the verdant land, so in the soul of man there lies one insular Tahiti, full of peace and joy, but encompassed by all the horrors of the half-known life. God keep thee! Push not off from that isle, thou canst never return!</p>
-<p style="text-align:right;">(H. Melville, Moby-Dick, 1851)</p>
-</div>
-</section>
-<nav>
-</nav>
-<section>
-</section>
+
+<footer class="container-fluid">
+</footer>
+
 </body>
 </html>
