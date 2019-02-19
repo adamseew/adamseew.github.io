@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://support.seashepherdglobal.org/widget/load_script"></script><script type="text/javascript"> var kentaa_stylesheet = kentaaLoadCSS("https://support.seashepherdglobal.org/widget/donate_button_stylesheet");kentaaOnloadCSS( kentaa_stylesheet, function() {kentaaLoadScript("https://support.seashepherdglobal.org/widget/donate_button.js?locale=en&position=right", function(){});});</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <style>
     body {
@@ -61,24 +60,37 @@
       <div class="row">
         <div class="col-sm-12">
             <h2>Constrained Optimization</h2>
-            <h4>So far... (Unconstrained Optimization)</h4>
-            <p>In a simple optimization problem without constraints we search for the \(m\) state values \(u_1,u_2,...u_m\) that minimize a <b>performance index</b> (called also objective function or performance index) \(\mathcal{L}\), which is a function of these parameters
-            $$\mathcal{L}(u_1,u_2,...u_m).$$
-            The vector \(\mathbf{u}=\begin{pmatrix}u_1 & u_2 & \cdots & u_m\end{pmatrix}^T\) of the state values is also called <b>decision vector</b>. Without any constraints on states and with the performance index \(\mathcal{L}(\mathbf{u})\) that has both first and second order partial derivate everywhere, <b>necessary conditions</b> for a minimum given \(i=1,...,m\) are
-            $$\frac{\partial\mathcal{L}}{\partial u_i}=0\label{1}\tag{1}$$
-            $$\frac{\partial^2\mathcal{L}}{\partial u_i^2}\geq 0\tag{2}.$$
-            The last condition means that the \((m\times m)\)-matrix, whose components are \(\partial^2\mathcal{L}/\partial u_i\partial u_j\) must be positive semidefinite, i.e., have eigenvalues that are zero or positive.
+            <!--<h3>Definitions</h3>
+            <h4>Formulation</h4>
+            <p>A constrained optimization can be defined with the <b>formulation</b> as follows
+              $$\min_{x\in\mathbb{R}^n} f(x)\;\;\mathrm{subject\;to}\;\;\begin{cases} c_i(x)=0, & i\in\mathcal{E}\\ c_i(x)\geq 0, & i\in\mathcal{I} \end{cases},
+              $$
+              with:
+              <ul>
+                <li><b>equality constraints</b>: \(c_i\;\;\mathrm{s.t.}\;\;i\in\mathcal{E}\)</li>
+                <li><b>inequality constraints</b>: \(c_i\;\;\mathrm{s.t.}\;\;i\in\mathcal{E}\)</li>
+                <li><b>feasible set</b>: \(\Omega=\{x\;\;\mathrm{s.t.}\;\;c_i(x)=0, i\in\mathcal{E};\;\;c_i(x)\geq 0, i\in\mathcal{I}\}\)</li>
+              </ul>
+              in this way we can state the optimization problem with a compact formulation
+              $$\min_{x\in\Omega} f(x)$$
             </p>
-            <p>All points that satisfy the first condition are called <b>stationary points</b>. The <b>sufficient condition for a local minimum</b> is the first necessary condition for a minimum (Equation \(\ref{1}\)), and, the eigenvalues are strict positive (that means \(\partial^2\mathcal{L}/\partial u_i^2>0\)).
-            </p> 
-            <p>If \(\partial\mathcal{L}/\partial u_i=0\) is satisfied, but \(\partial^2\mathcal{L}/\partial u_i^2=0\), that is the determinant of the matrix is zero (or in other words that one or more of its eigenvalues is zero), we need further analysis know when or not the point is a minimum. Such a point is called <b>singular point</b>. Let's take as an example a linear function \(\mathcal{L}(\mathbf{u})\) that we want to minimize. A linear function has \(\partial^2\mathcal{L}/\partial u_i^2=0\) in every point and thus does not have a minimum.
+            <h4>Optimality conditions (a recall from Unconstrained Optimization)</h4>
+            <p>
+              <ul>
+                <li><b>Necessary condition</b> must be satisfied by any solution point: \(\nabla f(x^*)=0\) and \(\nabla^2 f(x^*)\) positive semidefinite
+                </li>
+                <li><b>Sufficient condition</b> if satisfied at a point \(x^*\), than \(x^*\) is a solution: \(\nabla f(x^*)=0\) and \(\nabla^2 f(x^*)\) positive definite (so the solution is a local minimizer of \(f\))
+                </li>
+              </ul>
             </p>
-            <h4>Equality Constraints</h4>
-            <p>A more general class of problems involves the minimization of \(m\) decision parameters of a performance index which is function of \((n+m)\) parameters
-            $$\mathcal{L}(\mathbf{x};\mathbf{u}),$$
-            where \(n\) <b>state parameters</b> \(\mathbf{x}=(x_1,x_2,...,x_n)\) are determined by decision parameters through set of \(n\) constraint relations
-            $$f_1(\mathbf{x};\mathbf{u})=0,...,f_n(\mathbf{x};\mathbf{u})=0.$$
-            </p>
+            <h4>Local solutions</h4>
+            <p>
+              <ul>
+                <li>A point \(x^*\) is a <b>local solution</b> if \(x^*\in\Omega\) and \(\exists\) a neighborhood \(\mathcal{N}\) of \(x^*\) such that \(f(x)\geq f(x^*),\;\forall x\in\mathcal{N}\cap\Omega\)</li>
+                <li>A point \(x^*\) is an <b>isolated local solution</b> if \(x^*\in\Omega\) and \(\exists\) a neighborhood \(\mathcal{N}\) of \(x^*\) such that \(x^*\) is the only local solution in \(\mathcal{N}\cap\Omega\)</li>
+                <li>A point \(x^*\) is a <b>strong local solution</b> if \(x^*\in\Omega\) and \(\exists\) a neighborhood \(\mathcal{N}\) of \(x^*\) such that \(f(x)>f(x^*),\;\forall x\in\mathcal{N}\cap\Omega\) with \(x\neq x^*\)</li>
+              </ul>
+            </p>-->
         </div>
       </div>
       <br />

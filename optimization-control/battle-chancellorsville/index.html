@@ -53,6 +53,12 @@
       color: #000;
       background-color: transparent !important;
     }
+
+    .vcenter {
+      display:inline-block;
+      vertical-align:middle;
+      float:none;
+    }
   </style>
 </head>
 <body>
@@ -68,20 +74,20 @@
             <h2>Constrained Optimization</h2>
             <h3>Battle Of Chancellorsville</h3>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-7 vcenter">
           <p>It's May 1, 1863. Bright and sunny sky in Chancellorsville, Virginia is interrupted sporadically by cannon fire. General's Robert E. Lee’s Army of Northern Virginia needs your help to stop an attempted flanking movement by General Joseph Hooker’s Army of the Potomac.
           </p>
           <p>An artillerymen of New York’s First Artillery, lined up on the photo in front of his cannon, is wondering how he can maximaze the chance to target the enemy by varying the cannon's inclination (angle). Artillerymen attempts some casual fires, that just disoriented the opponent but did not reach the counter part at all. As you guessed, the artillerymen men tries to solve the problem analytically. As long as explosions rumble in the distance, he dips a feather from his pocket into an inkwell and writes the following equations.
           </p>
-          <p>First, the artillerymen supposes that the drag works directly against the velocity direction \(v\). Due to the cannon ball symmetry, the drag \(D\) is in the opposite direction of \(v\). This means that the ratio of vertical and horizontal components of \(v\) and \(D\) should be the same
-              $$\frac{v_y}{v_x}=\frac{D_y}{D_x}.$$
+          <p>First, the artillerymen supposes that the drag works directly against the velocity direction \(v\). Due to the cannon ball symmetry, the drag \(D\) is in the opposite direction of \(v\). 
           </p>
-        </div>
-        <div class="col-sm-6">
-          <img src="First-Artillery-New-York-Chancellorsville-Virginia.jpg" width="400px"/>
+        </div><div class="col-sm-5 vcenter">
+          <img src="First-Artillery-New-York-Chancellorsville-Virginia.jpg"/>
         </div>
         <div class="col-sm-12">
           <p>
+            This means that the ratio of vertical and horizontal components of \(v\) and \(D\) should be the same
+            $$\frac{v_y}{v_x}=\frac{D_y}{D_x}.$$
             At any following instant \(t\), the horizontal and vertical forces acting on the cannonball ball are
             $$F_x=D_x,\;\;\;F_y=-mg+D_y,$$
             where \(D_x\) is the horizontal and \(D_y\) the vertical component of aerodynamic drag, and \(gm\) is the gravity acceleration on the mass. Then, he obtains the drag components with the following equations
