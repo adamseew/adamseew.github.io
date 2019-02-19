@@ -102,11 +102,11 @@
             \right\}
             $$
           </p>
-          <p>He tries to solve the equation with his knowledge from Optimal Control Theory but gives up soon. The variable space is too big. Confused about such lack in the feasibility of an analytic solution, the artilleryman tries a last attempt and searches for a solution on the web from his laptop. Suddenly, the artilleryman finds the following repository that should apply to his scenario
+          <p>He tries to solve the equation with his knowledge from Optimal Control Theory but gives up soon. The variable space is too big. Confused about such lack in the feasibility of an analytic solution, the artilleryman tries a last attempt and searches for a solution on the web from his laptop. Suddenly, the artilleryman finds the following repository that could apply to his scenario
           </p>
           <pre><code>git clone https://bitbucket.org/adamseew/battle-chancellorsville.git</code></pre>
           <h4>Exercise 1</h4>
-          <p>The artilleryman soon understands how the code is structured. Classes are put in the <code>src/</code> directory that contains the implementation  while the <code>include/</code> directory the definition. The sources <code>wooden_ball.cpp</code> and <code>cannon_ball.cpp</code> contain th  dynamics. To perform the next step of the system we need to integrate the dynamics twice. <code>integrator_rkn.cpp</code> contains a modified version of RK4 integration algorithm. <code>solver_shooting.cpp</code> contains a non linear optimizer. Finally, the artilleryman learns that in order to start the algorithm he needs to perform following command
+          <p>The artilleryman soon understands how the code is structured. Classes are put in the <code>src/</code> directory that contains the implementation  while the <code>include/</code> directory the definition. The sources <code>wooden_ball.cpp</code> and <code>cannon_ball.cpp</code> contain the  dynamics. To perform the next step of the system we need to integrate the dynamics twice. <code>integrator_rkn.cpp</code> contains a modified version of RK4 integration algorithm. <code>solver_shooting.cpp</code> contains a non linear optimizer. Finally, the artilleryman learns that in order to start the algorithm he needs to perform following command
             <pre><code>./run.sh</code></pre>
             On the menu, he chooses the first voice. Let's help the artilleryman understand what's happening. What does the plot represent? What are the axis \(x\) and \(y\)?
           </p>
