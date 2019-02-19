@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Optimization and Control</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  <style>
+    body {
+      background-color: #000;
+      font-family: serif;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {
+      background-color: #f9eacb;
+      
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+      }
+      .row.content {height: auto;} 
+    }
+
+    p {
+      text-align:justify;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    footer {
+      padding: 28px;
+    }
+
+    h4 {
+      padding-top: 20px;
+    }
+
+    code {
+      text-align: center;
+      color: #000;
+      background-color: transparent !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+
+    <div class="col-xm-10 col-sm-8">
+      <div class="row">
+        <div class="col-sm-12">
+            <h2>Constrained Optimization</h2>
+            <h3>Battle Of Chancellorsville</h3>
+        </div>
+        <div class="col-sm-6">
+          <p>It's May 1, 1863. Bright and sunny sky in Chancellorsville, Virginia is interrupted sporadically by cannon fire. General's Robert E. Lee’s Army of Northern Virginia needs your help to stop an attempted flanking movement by General Joseph Hooker’s Army of the Potomac.
+          </p>
+          <p>An artillerymen of New York’s First Artillery, lined up on the photo in front of his cannon, is wondering how he can maximaze the chance to target the enemy by varying the cannon's inclination (angle). Artillerymen attempts some casual fires, that just disoriented the opponent but did not reach the counter part at all. As you guessed, the artillerymen men tries to solve the problem analytically. As long as explosions rumble in the distance, he dips a feather from his pocket into an inkwell and writes the following equations.
+          </p>
+          <p>First, the artillerymen supposes that the drag works directly against the velocity direction \(v\). Due to the cannon ball symmetry, the drag \(D\) is in the opposite direction of \(v\). This means that the ratio of vertical and horizontal components of \(v\) and \(D\) should be the same
+              $$\frac{v_y}{v_x}=\frac{D_y}{D_x}.$$
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <img src="First-Artillery-New-York-Chancellorsville-Virginia.jpg" width="400px"/>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            At any following instant \(t\), the horizontal and vertical forces acting on the cannonball ball are
+            $$F_x=D_x,\;\;\;F_y=-mg+D_y,$$
+            where \(D_x\) is the horizontal and \(D_y\) the vertical component of aerodynamic drag, and \(gm\) is the gravity acceleration on the mass. Then, he obtains the drag components with the following equations
+            $$D_x=-\frac{\rho_aC_dA\left(v_x\sqrt{v_x^2+v_y^2}\right)}{2},\;\;\;D_y=-\frac{\rho_aC_dA\left(v_y\sqrt{v_x^2+v_y^2}\right)}{2},$$
+            where \(\rho_a\) is the air density, \(C_d\) is the drag coefficient and \(A\) is the ball cross-sectional area. So, he describes the system' evolution with the following set of second order ordinary differential equations
+            $$\ddot{x}=-\frac{\rho_aC_dA\left(v_x\sqrt{v_x^2+v_y^2}\right)}{2m},\\              
+            \ddot{y}=-g-\frac{\rho_aC_dA\left(v_y\sqrt{v_x^2+v_y^2}\right)}{2m}.$$
+            Finally, he starts to write the optimization problem. The cost function to minimize is represented by the vertical and horizontal velocity components \(v^2\) that has to be minimized, and the constraints by the dynamics along with the boundary conditions at the initial and final point
+            $$\min \int_{t_i}^{t_f} v^2(\tau)d\tau\;\mathrm{s.t.}\;\Omega=\left\{
+              \dot{\mathbf{q}}=\begin{pmatrix}\dot{x}\\ \dot{v}\end{pmatrix},
+              \mathbf{q}_{t_i}=\begin{pmatrix}0\\0\\0\\0\end{pmatrix},\mathbf{q}_{t_f}=\begin{pmatrix}0\\ \alpha\\0\\0\end{pmatrix}
+            \right\}
+            $$
+          </p>
+          <p>He tries to solve the equation with his knowledge from Optimal Control Theory but give up soon. The variable space is too big. Confused of such  lack in feasibility of an analytic solution, the artillerymen tries a last attempt and searches for a solution on web from his laptop. Suddenly, the artillerymen finds the following repository that should apply to his scenario
+          </p>
+          <pre><code>git clone https://adamseew@bitbucket.org/adamseew/artillerymen.git</code></pre>
+          <h4>Exercise 1</h4>
+          <p>The artillerymen soon understands how the code is structured. Classes are put in the <code>src/</code> directory that contains the implementation  while the <code>include/</code> directory the definition. The sources <code>wooden_ball.cpp</code> and <code>cannon_ball.cpp</code> contain th  dynamics. To perform the next step of the system we need to integrate the dynamics twice. <code>integrator_rkn.cpp</code> contains a modified version of RK4 integration algorithm. <code>solver_shooting.cpp</code> contains a non linear optimizer. Finally, the artillerymen learns that in order to start the algorithm he needs to perform following command
+          <pre><code>./run.sh</code></pre>
+          On the menu he chooses the first voice. Let's help the artillerymen understand what's happening. What does the plot represents? What are the axis?
+          </p>
+          <h4>Exercise 2</h4>
+          <p>Satisfied by your answer, the artillerymen run again the algorithm and this time chooses the second voice. He is confused agin. In the function <code>program.cpp</code> somebody forgot to implement the <code>cannon_ball_example</code>. The function should perform the dynamics with differen  launching angle \(\theta\) (the launches are performed by the <code>run.sh</code> script thus only one launch has to be modelled as in the previou  example). \(\theta\) will impact the velocity \(v\) that is passed to the integrator as state of the system. Use the implementation of <code>wooden_ball_example</code> as a hint and try to implement this example. Note that you will have two variables \((x,y)\) i.e., your vector that  represents the initial boundary constraint \(\mathbf{q}_{t_i}\) will be defined as follow
+          <pre><code>vectorn start_position(2);
+start_position.set(0, 0.0);
+start_position.set(1, 0.0);</code></pre>
+          </p>
+          <h4>Exercise 3</h4>
+          <p>Face towards the direction of sky, the artillerymen screams "thank you brave man from the future"! But not everything is done. With the previous example we have performed just a set of random launches. Let's execute the algorithm again choosing the third voice. This time the enemy distant 605 meters is targeted. As artillerymen will learn very soon, the optimal solution is not always achievable. In the great majority of cases, the optimum can be reached only within specific tolerance. Try to perform the two different tolerance indexes and note the difference.
+          </p>
+          <p>The artillerymen is finally ready to reach his target, when suddenly he learns that somebody forgot to save the initial velocity output from the optimizer. Let's help the artillerymen one more time and save the output in a file called <code>initial_v.dat</code>!</p>
+        </div>
+      </div>
+      <br />
+
+      <br />
+    </div>
+
+    <div class="col-xm-0 col-sm-2">
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+</footer>
+
+</body>
+</html>
