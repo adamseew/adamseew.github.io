@@ -1,0 +1,57 @@
+
+body {
+    text-rendering: optimizeLegibility;
+    border-bottom: 10px solid #003366;
+    border-left: 10px solid #003366;
+    margin: 0px;
+    background-color: #003366;
+}
+
+article {
+    background-color: white;
+    padding: 16px !important;
+}
+
+header {
+    background-color: #e0e0e0 !important;
+    height: 100%;
+}
+
+nav {
+    padding: 16px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+    color: #003366;
+}
+
+p, div {
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+}
+
+article a {
+    color: black;
+    text-decoration: none;
+    background-color: #e5f0fb !important;
+}
+
+article a:hover {
+    background-color: #d5e3f0 !important;
+    text-decoration: underline;
+}
+
+.topmenu1 {
+    border-left: 10px solid #003366;
+    width: calc(100% - 10px) !important;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
