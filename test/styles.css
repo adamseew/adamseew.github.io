@@ -1,10 +1,10 @@
 
 body {
     text-rendering: optimizeLegibility;
-    border-bottom: 10px solid #003366;
-    border-left: 10px solid #003366;
+    border-bottom: 10px solid rgb(0,51,102);
+    border-left: 10px solid rgb(0,51,102);
     margin: 0px;
-    background-color: #003366;
+    background-color: rgb(0,51,102);
 }
 
 article {
@@ -13,7 +13,7 @@ article {
 }
 
 header, #menu_div1, nav {
-    background-color: #e0e0e0 !important;
+    background-color: rgb(224,224,224) !important;
 }
 
 nav {
@@ -26,7 +26,7 @@ h1 {
 
 h1, h2, h3 {
     font-family: Georgia, Times, "Times New Roman", serif !important;
-    color: #003366;
+    color: rgb(0,51,102);
 }
 
 p, div {
@@ -38,16 +38,16 @@ p, div {
 article a {
     color: black;
     text-decoration: none;
-    background-color: #e5f0fb !important;
+    background-color: rgb(229,240,251) !important;
 }
 
 article a:hover {
-    background-color: #d5e3f0 !important;
+    background-color: rgb(213,227,240) !important;
     text-decoration: underline;
 }
 
 .topmenu1 {
-    border-left: 10px solid #003366;
+    border-left: 10px solid rgb(0,51,102);
     width: calc(100% - 10px) !important;
     height: fit-content;
     position: absolute;
