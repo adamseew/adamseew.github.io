@@ -12,7 +12,7 @@ article {
     padding: 16px !important;
 }
 
-#menu_div1 {
+header, #menu_div1, nav {
     background-color: #e0e0e0 !important;
 }
 
