@@ -1,10 +1,13 @@
 
+html {
+    background-color: rgb(0,51,102);
+}
+
 body {
     text-rendering: optimizeLegibility;
     border-bottom: 10px solid rgb(0,51,102);
     border-left: 10px solid rgb(0,51,102);
     margin: 0px;
-    background-color: rgb(0,51,102);
 }
 
 article {
@@ -37,18 +40,12 @@ p, div {
 
 article a {
     background-color: rgb(229,240,251) !important;
-    -webkit-appearance: none;
     text-decoration: none;
-    -moz-appearance: none;
-    appearance: none;
     color: black;
 }
 
 nav li.pure-menu-selected a {
     color: rgb(0,51,102) !important;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 article a:hover {
