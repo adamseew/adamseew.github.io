@@ -40,6 +40,7 @@ p, div {
 
 article a {
     background-color: rgb(229,240,251) !important;
+    -webkit-tap-highlight-color: rgb(213,227,240);
     text-decoration: none;
     color: black;
 }
