@@ -46,7 +46,6 @@ nav li.pure-menu-selected a {
 }
 
 article a:hover {
-    background-color: rgb(213,227,240) !important;
     text-decoration: underline;
 }
 
