@@ -41,11 +41,16 @@ article a {
     background-color: rgb(229,240,251) !important;
 }
 
+article {
+    background-color: white !important;
+}
+
 nav li.pure-menu-selected a {
     color: rgb(0,51,102) !important;
 }
 
 article a:hover {
+    background-color: rgb(213,227,240) !important;
     text-decoration: underline;
 }
 
