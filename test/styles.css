@@ -12,7 +12,7 @@ article {
     padding: 16px !important;
 }
 
-header, #menu_div1, nav {
+header, #menu-div1, nav {
     background-color: rgb(224,224,224) !important;
 }
 
@@ -41,16 +41,34 @@ article a {
     background-color: rgb(229,240,251) !important;
 }
 
+nav li.pure-menu-selected a {
+    color: rgb(0,51,102) !important;
+}
+
 article a:hover {
     background-color: rgb(213,227,240) !important;
     text-decoration: underline;
 }
 
-.topmenu1 {
+.top-menu {
     border-left: 10px solid rgb(0,51,102);
     width: calc(100% - 10px) !important;
     height: fit-content;
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.index-img-div {
+    padding: 0 19px 9px 19px;
+    max-width: 600px !important;
+    float: right;
+}
+
+@media only screen and (max-width: 48em) {
+    .index-img-div {
+        max-width: 500px !important;
+        float: none;
+        padding: 0;
+    }
 }
