@@ -1,88 +1,32 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>NLP Solvers</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-  <style>
-    body {
-      background-color: #000;
-      font-family: serif;
-    }
-    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {
-      background-color: #f9eacb;
-      
-    }
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      height: 100%;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-      }
-      .row.content {height: auto;} 
-    }
-
-    p {
-      text-align:justify;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    footer {
-      padding: 28px;
-    }
-
-    h4 {
-      padding-top: 20px;
-    }
-
-    code {
-      text-align: center;
-      color: #000;
-      background-color: transparent !important;
-    }
-
-    .vcenter {
-      display:inline-block;
-      vertical-align:middle;
-      float:none;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NLP Solvers</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <script src="../../../scripts.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
+
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-    </div>
+<div class="pure-g">
 
-    <div class="col-xm-10 col-sm-8">
-      <div class="row">
-        <div class="col-sm-12">
-            <h2>Sequential Quadratic Programming</h2>
-            <h3>NLP Solvers: an overview</h3>
-        </div>
-        <div class="col-sm-7 vcenter">
-          <p>Optimization problems are used to obtain an exact solution (within a certain tolerance) in a number of important scientific applications, such as optimal control of a system driven by a complex differential dynamics, and trajectory optimization of manned space vehicles. In Apollo 11 mission "an iterative steepest ascent computational procedure was used to determine control-variable time histories (angle of attack and roll angle) which yield trajectories satisfying specified initial, in-flight, and terminal constraints while optimizing selected functions of the terminal state" (a very good read and reference <a href="https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19670015714.pdf">here</a>). </p>
+<div class="pure-u-1 pure-u-md-4-5">
+    <article>
+        <h1>Constrained Optimization</h1>
+
+        <div id="img-div" class="index-img-div pure-u-1 pure-u-md-1-2"><img class="pure-img" src="P01_F34_625.jpg"/></div>
+        
+        <h2>NLP Solvers: an overview</h2>
+
+        <p>Optimization problems are used to obtain an exact solution (within a certain tolerance) in a number of important scientific applications, such as optimal control of a system driven by a complex differential dynamics, and trajectory optimization of manned space vehicles. In Apollo 11 mission "an iterative steepest ascent computational procedure was used to determine control-variable time histories (angle of attack and roll angle) which yield trajectories satisfying specified initial, in-flight, and terminal constraints while optimizing selected functions of the terminal state" (a very good read and reference <a href="https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19670015714.pdf">here</a>). </p>
 <p>So far we have studied techniques to apply the optimization theory to different mathematical problems, that we classified into two categories based on the order of the cost function and the constraints. Nonlinear programming or NLP is a difficult field so it's always convenient to use special cases for study. Note that the meaning of "Programming" is "planning", the theory behind was only applied to real algorithms later so the relation with computer programming is purely accidental. Let's see the two categories to classify our problems.
           </p>
-        </div><div class="col-sm-5 vcenter">
-          <img src="P01_F34_625.jpg"/>
-          <br/><br/>
-        </div>
-        <div class="col-sm-12">
           <p>Problems with linear cost function and constraints belong to the category of linear problems and can be solved involving <b>linear programming</b> or LP. There are two different approaches that we studied to solve LP problems, the <b>simplex method</b> and the <b>interior-point method</b>.
           </p>
           <p>Problems with a nonlinear quadratic cost function and linear constraints are part of the class of quadratic problems and can be solved using <b>quadratic programming</b> or QP. We have studied the <b>sequential quadratic programming method</b> that solves a QP problem at each iterate until it reaches a (tolerable) solution.
@@ -94,9 +38,11 @@
           $$
           and it's unrealistic to find a generic solver. Instead, you should find the appropriate solver that fits a specific NLP problem. It's always possible (and unfortunately not uncommon) to find a problem that does not have any solution with any available solver; this does not necessarily mean that the problem diverges. You should build your own solver or use a method that adopts exhaustive search (that, by the way, leads to an intractable problem).</p>
           <p>But enough theory! Let's have a look at the most famous solvers. The next set of exercises introduces you to some of them!</p>
-          <h4>Exercise 1</h4>
+
+          <h3>Exercise 1</h3>
           <p>(1) <b>Ipopt</b> is the most famous open source optimization package for large-scale non linear optimization. It can be used to address general NLP problems in the form as we described in the equation above. You can download and compile the source by your own, or just download the executable to use with the modeling language (skip <a href="#executable">here</a>).</p>
-          <h4>Compile IPOPT source code</h4>
+          
+          <h3>Compile IPOPT source code</h3>
           <p>Internally, IPOPT implements an interior-point line-search filter method, a variation of the interior-point method that we learned in LP. It is particularly suitable for large scale problems with many constraints (with the assumption that the Jacobian matrix of the constraint function is sparse). Take also on mind that the optimizer search for a local minimum, thus if the problem is non-convex the solution strongly depends on the initial guess.</p>
           <p>First, some tools might be necessary</p>
           <pre><code>sudo apt-get install gcc g++ gfortran git cmake liblapack-dev pkg-config --install-recommends</code></pre>
@@ -112,13 +58,14 @@ cd ..; mkdir build; cd build</code></pre>
           <pre><code>../configure --prefix=/usr/local ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC</code></pre>
           <pre><code>make; sudo make install</code></pre>
           <p>Now, Ipopt should be installed and compiled. You should find the executable that you will need in the following exercise in the <code>bin</code> subdirectory.</p>
-          <h4 id="executable">Download the executable</h4>
+          
+          <h3 id="executable">Download the executable</h3>
           <p>Instead of downloading and compiling the library on your own, you can simply download the executable that you will use in the next example</p>
           <pre><code>wget https://ampl.com/dl/open/ipopt/ipopt-linux64.zip
 mkdir ~/Ipopt; unzip ipopt-linux64.zip -d ~/Ipopt</code></pre>
           <p>Finally, you should find your Ipopt executable in the <code>~/Ipopt</code> directory (or <code>~/Ipopt-3.12.12/build/bin</code>).</p>
 
-          <h4>Exercise 2</h4>
+          <h3>Exercise 2</h3>
           <p>The easiest way to run Ipopt (or any other solver) is to use it in connection with a modeling language, such as <b>Ampl</b>. You can download a free student version. It limits the number of variables and constraints to 300 but for our analysis, it will be enough</p>
           <pre><code>wget https://ampl.com/demo/amplide.linux64.tgz
 mkdir ~/Ampl; tar xzf amplide.linux64.tgz -C ~/Ampl</code></pre>
@@ -154,7 +101,7 @@ solve;</code></pre>
           <h4 id="exercise-3">Exercise 3</h4>
           <p>Now it's your turn! Try to model Problem 12.19 from the book and compare it with the one that we solved during constrained optimization module <a href="../constrained-optimization/20190220102348015.pdf">here</a>. Is the optimal solution \(x^*\) the same?</p>
           
-          <h4>Exercise 4</h4>
+          <h3>Exercise 4</h3>
           <p>You are familiar with Ipopt; it's a great solver and it's open-source so you can use and personalize it to your needs. But many times you will encounter the problem of choosing the right solver for your NLPs. So let's have a look on the others (remember always to <code>reset</code> between two different solvers executions in Ampl).</p>
           <p>(2) <b>Snopt</b> is among the most famous commercial solvers. It uses sequential quadratic programming SQP with quasi-Newton approximations of the Hessian (of the Lagrangian). Snopt is widely used for many problems involving trajectory optimization.</p>
           <p>(3) <b>Knitro</b> is a complete solver with a number of different algorithms from interior-point methods (that normally follows a path in the feasible region), to active set algorithms as SQP (that stays at the boundaries).</p>
@@ -162,7 +109,7 @@ solve;</code></pre>
           <pre><code>option solver snopt;</code></pre>
           <p>which one is the best for this problem? Hint: evaluate the goodness of a solver by the accuracy (you should also include other parameters, as execution time, in a real scenario).</p>
 
-          <h4>Appendix</h4>
+          <h3>Appendix</h3>
           <p>Note that you can use Ipopt (or any other solver that is compatible with the standard modeling languages), in a programming language (C/C++, Python, Matlab), but you must implement following functions to provide Ipopt with the necessary mathematical evaluations
             <ul>
               <li>problem size by defining <code>get_nlp_info</code></li>
@@ -176,20 +123,19 @@ solve;</code></pre>
           </p>
           <pre><code>cd ~/Ipopt-3.12.12/build/Ipopt/examples/hs071_cpp/</code></pre>
           <p>(to compile just type <code>make</code> and run <code>./hs071_cpp</code>).</p>
-        </div>
-      </div>
-      <br />
-
-      <br />
-    </div>
-
-    <div class="col-xm-0 col-sm-2">
-    </div>
-  </div>
+    </article>
 </div>
 
-<footer class="container-fluid">
-</footer>
+<div id="menu-div1" class="pure-u-1 pure-u-md-1-5">
+    <header id="menu-header">
+        <nav><div id="menu-div2" class="pure-menu custom-restricted-width"><ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link">[ Index ]</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/teaching" class="pure-menu-link">[ Teaching ]</a></li>
+        </ul></div></nav>
+    </header>                    
+</div>    
+</div>
 
 </body>
+
 </html>

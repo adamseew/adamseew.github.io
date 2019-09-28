@@ -23,7 +23,7 @@ h1 {
     font-size: 2em;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: Georgia, Times, "Times New Roman", serif !important;
     color: rgb(0,51,102);
 }
@@ -70,4 +70,20 @@ article a:hover {
         float: none;
         padding: 0;
     }
+}
+
+code {
+    background-color: rgb(238, 238, 238);
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+pre {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+
+pre code {
+    background-color: white !important;
 }

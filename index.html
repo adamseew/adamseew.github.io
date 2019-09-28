@@ -1,137 +1,53 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Adam's hidden tavern</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-    body {
-      background-color: #000;
-      font-family: serif;
-    }
-    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {
-      background-color: #f9eacb;
-      
-    }
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      height: 100%;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-      }
-      .row.content {height: auto;} 
-    }
-
-    p {
-      text-align:justify;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    footer {
-      padding: 28px;
-    }
-
-    .vcenter {
-      display:inline-block;
-      vertical-align:middle;
-      float:none;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adam Seewald</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <script src="scripts.js"></script>
 </head>
+
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-    </div>
+<div class="pure-g">
 
-    <div class="col-xm-10 col-sm-8">
-      <div class="row">
-        <div class="col-sm-12">
-            <h3>Adam Seewald</h3>
-            <p>PhD student in Aerial Robotics at the University of Southern Denmark<br/>
-            adam <i>at</i> seewald <i>dot</i> email<br/>
-            &Oslash;27-607-2 (<a href="where/">where!???</a>)</p>
-            <a></a>
-        </div>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>Source code</h3>
-          <a href="https://bitbucket.org/adamseew">bitbucket.org/adamseew</a><br/>
-          <a href="https://github.com/adamseew">github.com/adamseew</a><br/>
-          <br/><br/>
+<div class="pure-u-1 pure-u-md-4-5">
+    <article>
+        <h1>Adam Seewald</h1>
 
-          <h3>Courses</h3>
-          <h4>Optimization and Control (Spring 2019)</h4>
-          <h5>Constrained Optimization</h5>
-          <a href="optimization-control/constrained-optimization/20190220102348015.pdf">Theory and exercises</a><br/>
-          <a href="optimization-control/battle-chancellorsville/">Battle Of Chancellorsville</a>
-          <br/><br/>
+        <div id="img-div" class="index-img-div pure-u-1 pure-u-md-1-2"><img class="pure-img" src="_dsc6391.jpg"/></div>
 
-          <h5>Sequential Quadratic Programming</h5>
-          <a href="optimization-control/sequential-quadratic-programming/20190327113805750.pdf">Theory and exercises</a><br/>
-          <a href="optimization-control/nlp-solvers/">NLP Solvers: an overview</a>      
+        <h2>Contacts</h2>
+        <p>
+           - adam <i>AT</i> seewald <i>DOT </i>email -<br/>
+           - 2784 9313 -<br/>
+           - Ø27-607-2 (<a href="https://goo.gl/maps/pu9ZgLcnjTxexECN8">south-west</a> corner of TEK building, 1st floor) -<br/>
+           - my { <a href="https://bitbucket.org/adamseew">bitbucket</a>, <a href="https://github.com/adamseew">github</a> } -
+        </p>
 
-          <br/><br/>
+        <h2>About me</h2>
+        <p>I like writing; in particular, software to make mobile robots move and fly. I am currently a Ph.D. student in Aerial Robotics at University of Southern Denmark under the supervision of  professor <a href="https://portal.findresearcher.sdu.dk/da/persons/ups">Ulrik Pagh Schultz</a> where I joined Unmanned Aerial Systems Center in fall 2018. My research is focused on energy modeling and optimization of autonomous mobile robots and I am currently working on energy-aware planning strategies for Opterra fixed-wing drone.</p>
+        <p>I was previously with Altair Robotics Lab at University of Verona where I earned my M.Sc. in computer science (2018) advised by professor <a href="http://profs.sci.univr.it/~fiorini/">Paolo Fiorini</a>. My thesis was focused on the investigation of indirect methods for trajectory optimization with intermediate constraints for quadrotors.</p>
 
-          <h3>Unrelated...</h3>
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-sm-12">
-          <p>Understanding only the surface of the water is not enough to reveal the hidden dangers beneath.</p>
-          <p style="text-align:right;">(J. P. Sage, a quote about "Reinventing the wheel", 2010)</p>
-          </a>
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-sm-6 vcenter">
-          <p>Consider the subtleness of the sea; how its most dreaded creatures glide under water, unapparent for the most part, and treacherously hidden beneath the loveliest tints of azure. Consider also the devilish brilliance and beauty of many of its most remorseless tribes, as the dainty embellished shape of many species of sharks. Consider, once more, the universal cannibalism of the sea; all whose creatures prey upon each other, carrying on eternal war since the world began.</p>
-          <p>Consider all this; and then turn to the green, gentle, and most docile earth; consider them both, the sea and the land; and do you not find a strange analogy to something in yourself? For as this appalling ocean surrounds the verdant land, so in the soul of man there lies one insular Tahiti, full of peace and joy, but encompassed by all the horrors of the half-known life. God keep thee! Push not off from that isle, thou canst never return!</p>
-          <p style="text-align:right;">(H. Melville, Moby-Dick, 1851)</p>
-        </div><div class="col-sm-6 vcenter">
-          <img src="md_633.jpg" width="400px"/>
-        </div>
-      </div>
-      <br/>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <a href="https://www.seashepherdglobal.org/" target="_blank">
-            <img src="sea-shepherd-logo.png" style="width:84px !important;"/>
-          </a>
-        </div>
-      </div>
-      <br />
-
-      <br />
-    </div>
-
-    <div class="col-xm-0 col-sm-2">
-    </div>
-  </div>
+        <h2>Personal</h2>
+        <p>I grew up of swimming and programming in western Slovakia between Bratislava and <a href="https://goo.gl/maps/Tx3cn3dTNLXPphHk6">Sasinkovo</a>, a tiny <a href="http://www.winesofslovakia.com/index.php?option=com_content&task=view&id=69">wine</a>makers' village situated little less than an hour drive from the capital where I spent most of my summers. I am a space exploration enthusiast and in my free time, I enjoy outdoor activities like open waters swimming, hiking, cycling, and running.</p>
+    </article>
 </div>
 
-<footer class="container-fluid">
-</footer>
+<div id="menu-div1" class="pure-u-1 pure-u-md-1-5">
+    <header id="menu-header">
+        <nav><div id="menu-div2" class="pure-menu custom-restricted-width"><ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">[ Index ]</a></li>
+            <li class="pure-menu-item"><a href="/teaching" class="pure-menu-link">[ Teaching ]</a></li>
+        </ul></div></nav>
+    </header>                    
+</div>    
+</div>
 
 </body>
+
 </html>
