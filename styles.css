@@ -87,3 +87,13 @@ pre {
 pre code {
     background-color: white !important;
 }
+
+b {
+    background-color: rgb(213, 240, 226);
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+div.equation {
+    overflow: auto;
+}
