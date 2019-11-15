@@ -94,6 +94,42 @@ b {
     font-weight: normal !important;
 }
 
+b.journal, span.journal {
+    background-color: rgb(250, 233, 224);
+    border: 1px solid rgb(241, 88, 0);
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+b.conference, span.conference {
+    background-color: rgb(255, 251, 199);
+    border: 1px solid rgb(255, 238, 0);
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+span.conference, span.journal {
+    height: 2ex;
+    padding: 0 4px 0 4px;
+}
+
 div.equation {
     overflow: auto;
+}
+
+div.doi {
+    float: right;
+}
+
+span.grayisch, div.grayisch {
+    color: gray;
+}
+
+div.conference-entry, div.journal-entry {
+    padding-bottom: 5ex;
+}
+
+#filter-select {
+    text-align: right;
+    width: 100%;
 }

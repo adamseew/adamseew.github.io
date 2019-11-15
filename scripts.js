@@ -18,6 +18,31 @@ function ready(callback){
     });
 }
 
+function filter(){
+    if (document.getElementById('journal').checked) { 
+        var divsToHide = document.getElementsByClassName("journal-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "block";
+        }
+    } else {
+        var divsToHide = document.getElementsByClassName("journal-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "none";
+        }
+    }
+    if (document.getElementById('conference').checked) { 
+        var divsToHide = document.getElementsByClassName("conference-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "block";
+        }
+    } else {
+        var divsToHide = document.getElementsByClassName("conference-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "none";
+        }
+    }
+}
+
 ready(function(){
 
     function adjust_menu(x) {
