@@ -34,18 +34,32 @@ p, div {
     line-height: 1.8 !important;
 }
 
-article a {
+article a:not(.source) {
     background-color: rgb(229,240,251) !important;
     text-decoration: none;
     color: black;
+}
+
+div.entries > div:nth-of-type(odd) {
+    background-color: #f6f6f6;
+}
+
+
+.journal-entry a.source, .conference-entry a.source {
+    text-decoration: none;
+    color: initial;
 }
 
 nav li.pure-menu-selected a {
     color: rgb(0,51,102) !important;
 }
 
-article a:hover {
+article a:hover:not(.source) {
     background-color: rgb(213,227,240) !important;
+    text-decoration: underline;
+}
+
+.journal-entry a.source:hover, .conference-entry a.source:hover {
     text-decoration: underline;
 }
 
@@ -96,21 +110,22 @@ b {
 
 b.journal, span.journal {
     background-color: rgb(250, 233, 224);
-    border: 1px solid rgb(241, 88, 0);
+    border: 1px solid rgb(241, 88, 0) !important;
     text-decoration: none !important;
     font-weight: normal !important;
 }
 
 b.conference, span.conference {
     background-color: rgb(255, 251, 199);
-    border: 1px solid rgb(255, 238, 0);
+    border: 1px solid rgb(255, 238, 0) !important;
     text-decoration: none !important;
     font-weight: normal !important;
 }
 
-span.conference, span.journal {
-    height: 2ex;
-    padding: 0 4px 0 4px;
+span.conference, span.journal, span.details {
+    border: 1px solid #d8d8d8;
+    padding: .3ex 1ex .3ex 1ex;
+    margin: 0 .6ex 0 .4ex;
 }
 
 div.equation {
@@ -125,8 +140,10 @@ span.grayisch, div.grayisch {
     color: gray;
 }
 
-div.conference-entry, div.journal-entry {
-    padding-bottom: 5ex;
+div.entry {
+    padding: 2ex;
+    margin: 0 -16px 5px -16px;
+    border-top: 1px dashed #d8d8d8;
 }
 
 #filter-select {

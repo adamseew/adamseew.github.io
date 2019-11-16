@@ -41,6 +41,21 @@ function filter(){
             divsToHide[i].style.display = "none";
         }
     }
+    if (document.getElementById('details').checked) { 
+        var divsToHide = document.getElementsByClassName("authors-entry");
+        var divsToHide2 = document.getElementsByClassName("details-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "block";
+            divsToHide2[i].style.display = "block";
+        }
+    } else {
+        var divsToHide = document.getElementsByClassName("authors-entry");
+        var divsToHide2 = document.getElementsByClassName("details-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "none";
+            divsToHide2[i].style.display = "none";
+        }
+    }
 }
 
 ready(function(){
