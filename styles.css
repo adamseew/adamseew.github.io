@@ -126,6 +126,7 @@ span.conference, span.journal, span.details {
     border: 1px solid #d8d8d8;
     padding: .3ex 1ex .3ex 1ex;
     margin: 0 .6ex 0 .4ex;
+    text-align: center;
 }
 
 div.equation {
