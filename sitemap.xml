@@ -1,103 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
   <loc>https://adamseew.bitbucket.io/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://adamseew.bitbucket.io/friends/ulrik-pagh-schultz/</loc>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adamseew.bitbucket.io/friends/paolo-fiorini/</loc>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://adamseew.bitbucket.io/publications/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://adamseew.bitbucket.io/friends/ulrik-pagh-schultz/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://adamseew.bitbucket.io/friends/henrik-skov-midtiby/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://adamseew.bitbucket.io/publications/computation-oriented-energy-modeling-for-heterogeneous-embedded-systems/preprint/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <loc>https://adamseew.bitbucket.io/publications/coarse-grained-computation-oriented-energy-modeling-for-heterogeneous-parallel-embedded-systems/preprint/</loc>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/friends/benjamin-rouxel/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/friends/clemens-grelck/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/publications/component-based-computation-energy-modeling-for-embedded-systems/preprint/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/publications/component-based-computation-energy-modeling-for-embedded-systems/poster/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/constrained-optimization/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/battle-chancellorsville/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/sequential-quadratic-programming/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/nlp-solvers/</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://adamseew.bitbucket.io/publications/computation-oriented-energy-modeling-for-heterogeneous-embedded-systems/preprint/ijpp-hlpgpu-special-issue.pdf</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <loc>https://adamseew.bitbucket.io/publications/coarse-grained-computation-oriented-energy-modeling-for-heterogeneous-parallel-embedded-systems/preprint/ijpp-hlpgpu-special-issue.pdf</loc>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/publications/component-based-computation-energy-modeling-for-embedded-systems/preprint/splashcomp19posters-p3-p-b02e791-42699-final.pdf</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/publications/component-based-computation-energy-modeling-for-embedded-systems/poster/splash-poster_2.pdf</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/constrained-optimization/20190220102348015.pdf</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://adamseew.bitbucket.io/teaching/optimization-control/sequential-quadratic-programming/20190327113805750.pdf</loc>
-  <lastmod>2019-11-15T17:10:10+00:00</lastmod>
+  <lastmod>2019-11-28T12:12:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
+
+
 </urlset>
