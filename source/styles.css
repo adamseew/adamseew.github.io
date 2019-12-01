@@ -186,7 +186,11 @@ div.black-box nav.black-box-top {
 
 div.black-box div.black-box-content, div.black-box nav.black-box-top  {
     width: calc(100% - 32px) !important;
-    padding: 4px 16px 16px 16px;
+    padding: 16px;
+}
+
+div.black-box div.black-box-content {
+    padding-top: 4px !important;
 }
 
 body.black a {
