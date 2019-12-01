@@ -9,6 +9,12 @@ body {
     border-image-slice: 1;
 }
 
+body.black {
+    border: none !important;
+    background-color: rgb(42, 42, 42);
+    color: whitesmoke;
+}
+
 article {
     background-color: white;
     padding: 16px !important;
@@ -25,6 +31,10 @@ nav {
 h1, h2, h3, h4 {
     font-family: Georgia, Times, "Times New Roman", serif !important;
     color: rgb(0,51,102);
+}
+
+body.black h1, h2, h3, h4 {
+    color: white !important;
 }
 
 p, div {
@@ -113,6 +123,11 @@ b.journal, span.journal {
     font-weight: normal !important;
 }
 
+body.black b.journal {
+    background-color: rgb(241, 88, 0) !important;
+    border: 1px solid rgb(250, 233, 224) !important;
+}
+
 b.conference, span.conference {
     background-color: rgb(255, 251, 199);
     border: 1px solid rgb(255, 238, 0) !important;
@@ -148,4 +163,39 @@ div.entry {
 #filter-select {
     text-align: right;
     width: 100%;
+}
+
+div.black-box {    
+    margin: auto;
+    max-width: 480px;
+    width: calc(100% - 10px) !important;
+    border-bottom: 10px solid;
+    border-left: 10px solid;
+    border-top: 0px;
+    border-right: 0px;
+    border-image: linear-gradient(to right, white 0%, rgb(0, 97, 102) 100%);
+    border-image-slice: 1;
+    background-color: rgb(66, 66, 66);    
+    box-shadow: 0 0 16px rgb(30, 30, 30);
+}
+
+div.black-box nav.black-box-top {
+    text-align: right;
+    background-color: rgb(112, 112, 112) !important;
+}
+
+div.black-box div.black-box-content, div.black-box nav.black-box-top  {
+    width: calc(100% - 32px) !important;
+    padding: 16px;
+}
+
+body.black a {
+    background-color: rgb(112, 112, 112) !important;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+body.black a:hover {
+    background-color: rgb(97, 97, 97) !important;
+    text-decoration: underline;
 }

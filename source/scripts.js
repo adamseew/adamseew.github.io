@@ -87,8 +87,3 @@ ready(function(){
     adjust_menu(x)
     x.addListener(adjust_menu)
 });
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-148887878-1');
