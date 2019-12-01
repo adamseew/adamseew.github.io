@@ -1,0 +1,149 @@
+
+body {
+    text-rendering: optimizeLegibility;
+    border-bottom: 10px solid;
+    border-left: 10px solid;
+    border-image: linear-gradient(to right, rgb(0,51,102) 0%, rgb(0, 97, 102) 100%);
+    border-image-slice: 1;
+}
+
+article {
+    background-color: white;
+    padding: 16px !important;
+}
+
+header, #menu-div1, nav {
+    background-color: rgb(224,224,224) !important;
+}
+
+nav {
+    padding: 16px;
+}
+
+h1, h2, h3, h4 {
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+    color: rgb(0,51,102);
+}
+
+p, div {
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+}
+
+article a:not(.source) {
+    background-color: rgb(229,240,251) !important;
+    text-decoration: none;
+    color: black;
+}
+
+div.entries > div:nth-of-type(odd) {
+    background-color: #f6f6f6;
+}
+
+.journal-entry a.source, .conference-entry a.source {
+    text-decoration: none;
+    color: initial;
+}
+
+nav li.pure-menu-selected a {
+    color: rgb(0,51,102) !important;
+}
+
+article a:hover:not(.source) {
+    background-color: rgb(213,227,240) !important;
+    text-decoration: underline;
+}
+
+.journal-entry a.source:hover, .conference-entry a.source:hover {
+    text-decoration: underline;
+}
+
+.top-menu {
+    border-left: 10px solid rgb(0,51,102);
+    width: calc(100% - 10px) !important;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.index-img-div {
+    padding: 0 19px 9px 19px;
+    max-width: 600px !important;
+    float: right;
+}
+
+@media only screen and (max-width: 48em) {
+    .index-img-div {
+        max-width: 500px !important;
+        float: none;
+        padding: 0;
+    }
+}
+
+code {
+    background-color: rgb(238, 238, 238);
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+pre {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+
+pre code {
+    background-color: white !important;
+}
+
+b {
+    background-color: rgb(213, 240, 226);
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+b.journal, span.journal {
+    background-color: rgb(250, 233, 224);
+    border: 1px solid rgb(241, 88, 0) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+b.conference, span.conference {
+    background-color: rgb(255, 251, 199);
+    border: 1px solid rgb(255, 238, 0) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+span.conference, span.journal, span.details {
+    border: 1px solid #d8d8d8;
+    padding: .3ex 1ex .3ex 1ex;
+    margin: 0 .6ex 0 .4ex;
+    text-align: center;
+}
+
+div.equation {
+    overflow: auto;
+}
+
+div.doi {
+    float: right;
+}
+
+span.grayisch, div.grayisch {
+    color: gray;
+}
+
+div.entry {
+    padding: 2ex;
+    margin: 0 -16px 5px -16px;
+    border-top: 1px dashed #d8d8d8;
+}
+
+#filter-select {
+    text-align: right;
+    width: 100%;
+}
