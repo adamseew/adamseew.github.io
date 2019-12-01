@@ -166,11 +166,6 @@ div.entry {
     overflow: auto;
 }
 
-span.filter-entry {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
 .fas {
     color: rgb(112, 112, 112) !important;
 }
