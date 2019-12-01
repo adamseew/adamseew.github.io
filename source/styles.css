@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
     color: rgb(0,51,102);
 }
 
-body.black h1, h2, h3, h4 {
+h1.black, h2.black, h3.black, h4.black {
     color: white !important;
 }
 
