@@ -163,11 +163,16 @@ div.entry {
 #filter-select {
     text-align: right;
     width: 100%;
+    overflow: auto;
 }
 
 span.filter-entry {
     overflow: hidden;
     white-space: nowrap;
+}
+
+.fas {
+    color: rgb(112, 112, 112) !important;
 }
 
 div.black-box {    
