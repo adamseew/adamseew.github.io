@@ -173,7 +173,7 @@ div.black-box {
     border-left: 10px solid;
     border-top: 0px;
     border-right: 0px;
-    border-image: linear-gradient(to right, white 0%, rgb(0, 97, 102) 100%);
+    border-image: linear-gradient(to right, white 0%, rgb(241, 88, 0) 100%);
     border-image-slice: 1;
     background-color: rgb(66, 66, 66);    
     box-shadow: 0 0 16px rgb(30, 30, 30);
