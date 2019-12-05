@@ -12,9 +12,15 @@
     <link rel="stylesheet" href="../../../source/styles.css">
     <link rel="stylesheet" href="../../../source/pure-min.css">
     <link rel="stylesheet" href="../../../source/grids-responsive-min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            resize();
+            window.addEventListener("resize", resize);
+        });
+    </script>
 </head>
 
-<body class="black" onresize="resize()" onload="resize()">
+<body class="black">
     
     <div class="black-box" id="bb">
         <nav class="black-box-top" id="nav-bb">
