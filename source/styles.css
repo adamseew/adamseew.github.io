@@ -129,7 +129,7 @@ body.black b.journal {
 }
 
 b.conference, span.conference {
-    background-color: rgb(255, 251, 199);
+    background-color: rgb(255, 254, 238);
     border: 1px solid rgb(255, 238, 0) !important;
     text-decoration: none !important;
     font-weight: normal !important;
