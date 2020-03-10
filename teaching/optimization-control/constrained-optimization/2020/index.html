@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148887878-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'UA-148887878-1');</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Constrained optimization 2020</title>
+    <link rel="stylesheet" href="../../../../source/styles.css">
+    <link rel="stylesheet" href="../../../../source/pure-min.css">
+    <link rel="stylesheet" href="../../../../source/grids-responsive-min.css">
+    <script src="../../../../source/scripts.js"></script>
+    <script src="../../../../source/es5/tex-mml-chtml.js" async></script>
+</head>
+
+<body>
+
+<div class="pure-g">
+
+<div class="pure-u-1 pure-u-md-4-5">
+    <article>
+        <h1>Constrained optimization</h1>
+
+        <h3>Exercise 1</h3>
+
+        <div class="exercise">
+            <p>Consider the problem:</p>
+            <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^2}{J(\mathbf{x})=2x_1+x_2}\,\,\,\text{s.t.}\,\,\,x_1^2+x_2^2-2=0,$$</div>
+            <p>
+                <ol type="i">
+                    <li id="0_i_anchor">find all extreme points, and</li>
+                    <li id="0_ii_anchor">check the KKT conditions at the extreme points.</li>
+                </ol>
+            </p>
+        </div>
+
+        <h3>Exercise 2</h3>
+        
+        <div class="exercise">
+            <p>Consider the half space defined by (this is the exercise on page 353 n. 12.14 in the textbook):</p>
+            <div class="equation">$$H=\{\mathbf{x}\in\,\mathbb{R}^n\,\text{s.t.}\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0\},$$</div>
+            <p>where \(\mathbf{a}\in\,\mathbb{R}^n,\,\alpha\in\,\mathbb{R}\) are given:
+                <ol type="i">
+                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean distance.</li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="hint">
+            <p>What is the <b>Euclidean norm</b>?</p>
+            <p><span class="important">def</span>: given \(\mathbf{x}=(x_1,x_2,\ldots,x_n)\in\,\mathbb{R}^n\), the Euclidean norm of \(\mathbf{x}\), denoted \(\lVert \mathbf{x} \rVert\), is defined \(\lVert \mathbf{x} \rVert=\sqrt{\sum^n_{i=1}{x_i^2}}\).</p>
+
+            <div class="figure">
+                <figure>
+                    <img class="pure-img img200" src="euclidean-distance1.png" alt="Euclidean distance"/>
+                    <figcaption>a. norm in 2D (\(\mathbb{R}^2\))</figcaption>
+                </figure>
+                <figure>
+                    <img class="pure-img img300" src="euclidean-distance2.png" alt="Euclidean distance"/>
+                    <figcaption>b. norm in 3D (\(\mathbb{R}^3\))</figcaption>
+                </figure>
+            </div>
+            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the original, as a consequence of the Pythagorean theorem.
+            </p>
+            <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the norm that you just found, and you'll see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
+        </div>
+        <p>The optimization problem can be written:</p>
+        <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^n}{J(\mathbf{x})=\lVert\mathbf{x}\rVert^2}
+        \,\,\,\text{s.t.}\,\,\,c_1(\mathbf{x})=\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0,$$</div>
+        <p>where \(c_1\) is an inequality constraint.</p>
+        <p>To find the point with the smallest Euclidean norm, we need to solve the optimization problem with Karush-Kuhn-Tucker (KKT) conditions.</p>
+
+        <div class="hint">
+            <p>What are the <b>KKT conditions</b>?</p>
+
+            <p>KKT condition is the first-order necessary condition for optimality (well, conditions as it is a set of them), and you express them with the following <span class="important">th</span>: suppose \(x^*\) is a local minimum, \(J,c_i\) are continuosly differentiable. \(\exists\) a Lagrange multiplier vector \(\mathbf{\lambda}^*\) with components \(\lambda_i^*, i\in\mathcal{E}\cup\mathcal{I}\) (meaning there is one \(\lambda\) for each equality and inequality contraint) s.t.:
+                <ol type="1">
+                    <li>\(\nabla_x\mathcal{L}(x^*,\lambda^*)=0\), this is the stationarity condition,</li>
+                    <li>\(c_i(x^*)=0,\,\forall i\in\mathcal{E}\), recall \(\mathcal{E}\) are the equality constraints,</li>
+                    <li>\(c_i(x^*)\geq 0,\,\forall i\in\mathcal{I}\), recall \(\mathcal{I}\) are the inequality constraints. Both this and the above one are primal feasibility conditions,</li>
+                    <li>\(\lambda_i^*\geq 0,\,\forall i\in\mathcal{I}\), this is the dual feasibility condition, and</li>
+                    <li>\(\lambda_i^*c_i(x^*)\geq 0,\,\forall i\in\mathcal{E}\cup\mathcal{I}\), this is the complementarity condition.</li>
+                </ol>
+            </p>
+            <p>Ok, nice. But what is the <b>\(\mathcal{L}\) Lagrange function</b> or Lagrangian?</p>
+            <p><span class="important">def</span>: the Lagrangian is defined \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=J(\mathbf{x})-\sum_{i\in\mathcal{E}\cup\mathcal{I}}{\lambda_ic_i(x)}\) where \(\lambda_i\) are the lagrange multipliers.</p>
+            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanich into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution.</p>
+        </div>
+
+        <p>In our case, the Lagrangian is:</p>
+        <div class="equation">$$
+            \mathcal{L}(\mathbf{x},\mathbf{\lambda})=\lVert\mathbf{x}\rVert^2-\lambda_1(\mathbf{a}^T\mathbf{x}+\alpha),
+        $$</div>
+        <p>now, for simplicity let's suppose we are dealing with just one element in the vector \(\mathbf{x}=x\) (and thus also \(\mathbf{a}=a\)). The first derivative of the Lagrangian is: \(\nabla_x\mathcal{L}(x,\lambda)=2x-\lambda_1a\), and the second is: \(\nabla_{xx}\mathcal{L}(x,\lambda)=2\).</p>
+        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions, to find the points with smallest Euclidean norm. The (1) condtion can be also written:</p>
+        <div class="equation">$$
+            \nabla_x\mathcal{L}(x^*,\lambda^*)=2x^*-\lambda_1^*a=0,$$$$
+            x^*=\frac{\lambda_1^*}{2}a,
+        $$</div>
+        <p>while the (5) condition implies that \(\lambda_1\) or \(c_1\) is zero:</p>
+        <div class="equation">$$
+            \lambda_1^*=0,$$$$
+            ax^*+\alpha=\frac{\lambda_1^* a^2}{2}+\alpha=0,
+        $$</div>
+        <p>note that we wrote the above equation by substituting the value of \(x^*\) that we found using the KKT condition (1). Depending on \(\alpha\), there are thus two cases to satisfy KKT:
+            <ol type="1">
+                <li>when \(\alpha=0\), to have \(ax^*=\frac{\lambda_1^* a^2}{2}=0\) we clearly need \(x^*=0,\lambda_1^*=0\) <a href="#1_i_anchor">[i]</a>, and</li>
+                <li>when \(\alpha\neq 0\), to have:<br/>
+                    \(ax^*+\alpha=0,\,ax^*=-\alpha\,\implies x^*=-\frac{\alpha}{a}\)<br/>
+                    \(\lambda_1^*a^2\cdot\frac{1}{2}+\alpha=0\,\implies \lambda_1^*=-\alpha\frac{2}{a^2}\) <a href="#1_i_anchor">[i]</a>.
+                </li>
+            </ol>
+        </p>
+
+        <h3>Exercise 3</h3>
+
+        <div class="exercise">
+            <p>Consider the problem:</p>
+            <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^2}{J(\mathbf{x})=x_1+x_2}\,\,\,\text{s.t.}\,\,\,x_1^2+x_2^2-1=0,$$</div>
+            <p>
+                <ol type="i">
+                    <li id="2_i_anchor">solve the problem by eliminating the variable \(x_2\), and</li>
+                    <li id="2_ii_anchor">show that the choice of sign is critical.</li>
+                </ol>
+            </p>
+        </div>
+
+        <h3>Exercise 4</h3>
+
+        <div class="exercise">
+            <p>Consider the problem of finding the point on the parabola \(y=\frac{1}{5}(x-1)^2\) that is closest to \((1,2)\) in the Euclidean norm sense (this is the exercise on page 354 n. 12.18 in the textbook). We can formulate this problem as:</p>
+            <div class="equation">$$\min_{x,y\in\mathbb{R}}{J(x,y)=(x-1)^2+(y-2)^2}\,\text{s.t.}\,(x-1)^2-5y=0,$$</div>
+            <p>
+                <ol type="i">
+                    <li id="3_i_anchor">find all the KKT points and investigate if LICQ is satisfied,</li>
+                    <li id="3_ii_anchor">which of these points are solution, and</li>
+                    <li id="3_iii_anchor">by substituting the constraint into \(J\) (eliminating \(x\)) we get an unconstrained optimization problem. Show how the solution differs from the constrained problem.</li>
+                </ol>
+            </p>
+        </div>
+
+        <p>The Lagrangian of the problem \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=\mathcal{L}(x,y,\lambda_1)\) is:
+        </p>
+        <div class="equation">
+            $$\mathcal{L}(x,y,\lambda_1)=(x-1)^2+(y-2)^2-\lambda_1\left((x-1)^2-5y\right)$$
+            $$\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,=(1-\lambda_1)(x-1)^2+(y-2)^2+5\lambda_1y,$$
+            $$\nabla_\mathbf{x}\mathcal{L}(x,y,\lambda_1)=\begin{pmatrix}
+                \,\,\frac{\partial}{\partial x}\mathcal{L}(x,y,\lambda_1)\,\, \\ 
+                \frac{\partial}{\partial y}\mathcal{L}(x,y,\lambda_1) 
+            \end{pmatrix}=\begin{pmatrix}
+                \,\,2(1-\lambda_1)(x-1)\,\, \\ 
+                2(y-2)+5\lambda_1
+            \end{pmatrix},$$
+        </div>
+        <p>Using the KKT condition (1) first and (2) later, we have that:</p>
+        <div class="equation">
+            $$\nabla_\mathbf{x}\mathcal{L}(x^*,y^*,\lambda_1^*)=0\implies\begin{cases}
+            2(1-\lambda_1^*)(x^*-1)=0\\
+            \,\,\,\,\,2(y^*-2)+5\lambda_1^*=0
+            \end{cases}$$
+            $$\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,c_1(x^*)=0\implies (x^*-1)^2-5y^*=0.$$
+        </div>
+        <p>By putting these three equations in system and solving for the variables, we obtain the following optimal states and the lambda multiplier: \(x^*=1, y^*=0, \lambda_1^*=\frac{4}{5}\) <a href="#3_i_anchor">[i]</a>. Note that we have used just the KKT conditions (1&mdash;2); why? Well, think about it. So we have just an equality constraint here, which indicates that \(c_1\) at the optimal point should be zero. Thus condition (5) is true as it contains \(c_1\), which we say should be zero, along with the multiplier. Conditions (3&mdash;4) are both for inequality constraints only, so we don't consider them here.</p>
+
+        <div class="hint">
+            <p>What is <b>LICQ</b>?</p>
+
+            <p>The linear indipendence constraint qualification checks whenever the set of active constraints gradients is lineary indipendent.</p>
+            <div class="equation">$$
+                \nabla c_i(x)\,\text{is l.i.}\,\text{with}\,i\in\mathcal{A}(x)
+            $$</div>
+            <p>The LICQ introduce also the concept of <b>active constraints</b>; what dows it mean?</p>
+            <p><span class="important">def</span>: the active set of constraints is a set of equality and inequality constraints for which holds the equality relation, other than just the inequality:</p>
+            <div class="equation">$$
+                \mathcal{A}(x)=\mathcal{E}\cup\{i\in\mathcal{I}\,\text{s.t.}\,c_i(x)=0\}
+            $$</div>
+        </div>
+
+        <p>To verify LICQ, we need thus to check what happens at \(\mathbf{x}^*\) with the constraint \(c_1(\mathbf{x})\):</p>
+        <div class="equation">
+            $$\nabla_\mathbf{x} c(x^*,y^*)=\begin{pmatrix}
+                2x-2\\-5
+            \end{pmatrix}=\begin{pmatrix}0\\-5\end{pmatrix},$$
+        </div>
+        
+        <p>so the partial derivatives of the constraint are lineary indipendent, and LICQ holds <a href="#3_i_anchor">[i]</a>.</p>
+
+        <div class="hint">
+            <p>To proof that a point is actual solution, we need <b>second-order optimality condition</b> for a local minimum.</p>
+
+            <p><span class="important">th</span>: \(x^*\) is a [weak]strong local minimum iff:
+                <ol type="1">
+                    <li>KKT conditions holds, and</li>
+                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*)\),</li>
+                </ol>
+            Note that if the condition (2) holds with \(\geq\) or positive semi-definite, we are speaking about the necessary condition (for a weak local minimum). If with \(>\) or positive definite, we are speaking about the sufficient condition (for a strong local minimum).
+            </p>
+            <p>What does it mean necessary/sufficient here? We know how to verify that \(x^*\) could be a solution (necessary condition), or is certainly a solution (sufficient condition).</p>
+            <p>In the above theorem, we used the notion of <b>critical cone</b>. With constraints, we don't need to consider all the directions for the solution, just those that are feasible. The formal <span class="important">def</span> is the following (it might be little blurry, but you'll see how it works in the example):</p>
+            <div class="equation">$$
+                \mathcal{C}(x^*,\lambda^*)=\{w\in\mathcal{F}(x^*)\,\text{s.t.}\,\lambda_i^*\nabla c_i(x^*)^Tw=0,\,\forall i\in\mathcal{A}(x^*),\lambda_i^*>0\},
+            $$</div>
+            <p>where \(\mathcal{F}(x^*)\) is a linearized feasible direction.</p>
+        </div>
+        <p>To find if a point is an actual solution, we need to proof the second-order optimality condition, and thus first we need to find the critical cone \(w\in\mathcal{F}(x^*)\iff w=(w_1, w_2)\) that satisfies \(\nabla c_1(x^*)^Tw=0\) (since from the KKT conditions we know that \(\lambda_1\neq 0\), we need the second part of the multiplication to be zero):</p>
+        <div class="equation">$$
+            (0\,\,\,-5)\begin{pmatrix}w_1 \\ w_2\end{pmatrix}\iff w=\begin{pmatrix}w_1 \\ 0\end{pmatrix},
+        $$</div>
+        <p>now, let's check the second-order optimality condition:</p>
+        <div class="equation">$$
+            w^T\nabla^2\mathcal{L}\left(1,0,\frac{4}{5}\right)w=(w_1\,\,\,0)\begin{pmatrix}2\left(1-\frac{4}{5}\right) & 0 \\ 0 & 2\end{pmatrix}\begin{pmatrix}w_1 \\ 0\end{pmatrix},$$$$
+            =\frac{2}{5}w_1^2>0,
+        $$</div>
+        <p>which is true per each \(w_1\neq 0\). So the sufficient condition holds, and \((1,0)\) is the optimal solution <a href="#3_ii_anchor">[ii]</a>.</p>
+        <p>For the final point, we change \((x-1)^2\) with \(5y\) in \(J\):</p>
+        <div class="equation">$$\min_{y\in\mathbb{R}}{\tilde{J}(y)=5y+(y-2)^2}=y^2+y+4,$$</div>
+        <p>which is a parabola with imagianry solutions. It can be written \(\left(y+\frac{1}{2}\right)^2+\frac{15}{4}\), that with \(y^*=-\frac{1}{2}\) yields to \(\tilde{J}\left(-\frac{1}{2}\right)=\frac{15}{4}\), that is different from \(J(1,0)=4\). So optimal solution to this problem cannot yield solutions to the original problem <a href="#3_iii_anchor">[iii]</a>.</p>
+    </article>
+</div>
+
+<div id="menu-div1" class="pure-u-1 pure-u-md-1-5">
+    <header id="menu-header">
+        <nav><div id="menu-div2" class="pure-menu custom-restricted-width"><ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link">[ Index ]</a></li>
+            <li class="pure-menu-item"><a href="/publications" class="pure-menu-link">[ Publications ]</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/teaching" class="pure-menu-link">[ Teaching ]</a></li>
+        </ul></div></nav>
+    </header>                    
+</div>    
+</div>
+
+</body>
+
+</html>
