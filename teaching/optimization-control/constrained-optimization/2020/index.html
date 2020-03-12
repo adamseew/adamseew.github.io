@@ -42,7 +42,7 @@
             <div class="equation">$$H=\{\mathbf{x}\in\,\mathbb{R}^n\,\text{s.t.}\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0\},$$</div>
             <p>where \(\mathbf{a}\in\,\mathbb{R}^n,\,\alpha\in\,\mathbb{R}\) are given:
                 <ol type="i">
-                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean distance.</li>
+                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean norm.</li>
                 </ol>
             </p>
         </div>
@@ -61,7 +61,7 @@
                     <figcaption>b. norm in 3D (\(\mathbb{R}^3\))</figcaption>
                 </figure>
             </div>
-            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the original, as a consequence of the Pythagorean theorem.
+            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the origin, as a consequence of the Pythagorean theorem.
             </p>
             <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the norm that you just found, and you'll see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
         </div>
@@ -192,7 +192,7 @@
             <p><span class="important">th</span>: \(x^*\) is a [weak]strong local minimum iff:
                 <ol type="1">
                     <li>KKT conditions holds, and</li>
-                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*)\),</li>
+                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*).\)</li>
                 </ol>
             Note that if the condition (2) holds with \(\geq\) or positive semi-definite, we are speaking about the necessary condition (for a weak local minimum). If with \(>\) or positive definite, we are speaking about the sufficient condition (for a strong local minimum).
             </p>
