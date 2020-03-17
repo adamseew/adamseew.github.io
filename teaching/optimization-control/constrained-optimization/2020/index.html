@@ -42,7 +42,7 @@
             <div class="equation">$$H=\{\mathbf{x}\in\,\mathbb{R}^n\,\text{s.t.}\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0\},$$</div>
             <p>where \(\mathbf{a}\in\,\mathbb{R}^n,\,\alpha\in\,\mathbb{R}\) are given:
                 <ol type="i">
-                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean distance.</li>
+                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean norm.</li>
                 </ol>
             </p>
         </div>
@@ -57,11 +57,11 @@
                     <figcaption>a. norm in 2D (\(\mathbb{R}^2\))</figcaption>
                 </figure>
                 <figure>
-                    <img class="pure-img img300" src="euclidean-distance2.png" alt="Euclidean distance"/>
+                    <img class="pure-img img200" src="euclidean-distance2.png" alt="Euclidean distance"/>
                     <figcaption>b. norm in 3D (\(\mathbb{R}^3\))</figcaption>
                 </figure>
             </div>
-            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the original, as a consequence of the Pythagorean theorem.
+            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the origin, as a consequence of the Pythagorean theorem.
             </p>
             <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the norm that you just found, and you'll see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
         </div>
@@ -74,7 +74,7 @@
         <div class="hint">
             <p>What are the <b>KKT conditions</b>?</p>
 
-            <p>KKT condition is the first-order necessary condition for optimality (well, conditions as it is a set of them), and you express them with the following <span class="important">th</span>: suppose \(x^*\) is a local minimum, \(J,c_i\) are continuosly differentiable. \(\exists\) a Lagrange multiplier vector \(\mathbf{\lambda}^*\) with components \(\lambda_i^*, i\in\mathcal{E}\cup\mathcal{I}\) (meaning there is one \(\lambda\) for each equality and inequality contraint) s.t.:
+            <p>KKT condition is the first-order necessary condition for optimality (well, conditions as it is a set of them), and you express them with the following <span class="important">th</span>: suppose \(x^*\) is a local minimum, \(J,c_i\) are continuously differentiable. \(\exists\) a Lagrange multiplier vector \(\mathbf{\lambda}^*\) with components \(\lambda_i^*, i\in\mathcal{E}\cup\mathcal{I}\) (meaning there is one \(\lambda\) for each equality and inequality constraint) s.t.:
                 <ol type="1">
                     <li>\(\nabla_x\mathcal{L}(x^*,\lambda^*)=0\), this is the stationarity condition,</li>
                     <li>\(c_i(x^*)=0,\,\forall i\in\mathcal{E}\), recall \(\mathcal{E}\) are the equality constraints,</li>
@@ -85,7 +85,7 @@
             </p>
             <p>Ok, nice. But what is the <b>\(\mathcal{L}\) Lagrange function</b> or Lagrangian?</p>
             <p><span class="important">def</span>: the Lagrangian is defined \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=J(\mathbf{x})-\sum_{i\in\mathcal{E}\cup\mathcal{I}}{\lambda_ic_i(x)}\) where \(\lambda_i\) are the lagrange multipliers.</p>
-            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanich into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution.</p>
+            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanics into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution.</p>
         </div>
 
         <p>In our case, the Lagrangian is:</p>
@@ -93,7 +93,7 @@
             \mathcal{L}(\mathbf{x},\mathbf{\lambda})=\lVert\mathbf{x}\rVert^2-\lambda_1(\mathbf{a}^T\mathbf{x}+\alpha),
         $$</div>
         <p>now, for simplicity let's suppose we are dealing with just one element in the vector \(\mathbf{x}=x\) (and thus also \(\mathbf{a}=a\)). The first derivative of the Lagrangian is: \(\nabla_x\mathcal{L}(x,\lambda)=2x-\lambda_1a\), and the second is: \(\nabla_{xx}\mathcal{L}(x,\lambda)=2\).</p>
-        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions, to find the points with smallest Euclidean norm. The (1) condtion can be also written:</p>
+        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions, to find the points with smallest Euclidean norm. The (1) condition can be also written:</p>
         <div class="equation">$$
             \nabla_x\mathcal{L}(x^*,\lambda^*)=2x^*-\lambda_1^*a=0,$$$$
             x^*=\frac{\lambda_1^*}{2}a,
@@ -140,11 +140,11 @@
             </p>
         </div>
 
-        <p>The Lagrangian of the problem \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=\mathcal{L}(x,y,\lambda_1)\) is:
+        <p>The Lagrangian \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=\mathcal{L}(x,y,\lambda_1)\) of the problem is:
         </p>
         <div class="equation">
             $$\mathcal{L}(x,y,\lambda_1)=(x-1)^2+(y-2)^2-\lambda_1\left((x-1)^2-5y\right)$$
-            $$\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,=(1-\lambda_1)(x-1)^2+(y-2)^2+5\lambda_1y,$$
+            $$=(1-\lambda_1)(x-1)^2+(y-2)^2+5\lambda_1y,$$
             $$\nabla_\mathbf{x}\mathcal{L}(x,y,\lambda_1)=\begin{pmatrix}
                 \,\,\frac{\partial}{\partial x}\mathcal{L}(x,y,\lambda_1)\,\, \\ 
                 \frac{\partial}{\partial y}\mathcal{L}(x,y,\lambda_1) 
@@ -166,7 +166,7 @@
         <div class="hint">
             <p>What is <b>LICQ</b>?</p>
 
-            <p>The linear indipendence constraint qualification checks whenever the set of active constraints gradients is lineary indipendent.</p>
+            <p>The linear independence constraint qualification checks whenever the set of active constraints gradients is linearly independent.</p>
             <div class="equation">$$
                 \nabla c_i(x)\,\text{is l.i.}\,\text{with}\,i\in\mathcal{A}(x)
             $$</div>
@@ -192,7 +192,7 @@
             <p><span class="important">th</span>: \(x^*\) is a [weak]strong local minimum iff:
                 <ol type="1">
                     <li>KKT conditions holds, and</li>
-                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*)\),</li>
+                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*).\)</li>
                 </ol>
             Note that if the condition (2) holds with \(\geq\) or positive semi-definite, we are speaking about the necessary condition (for a weak local minimum). If with \(>\) or positive definite, we are speaking about the sufficient condition (for a strong local minimum).
             </p>
@@ -215,7 +215,25 @@
         <p>which is true per each \(w_1\neq 0\). So the sufficient condition holds, and \((1,0)\) is the optimal solution <a href="#3_ii_anchor">[ii]</a>.</p>
         <p>For the final point, we change \((x-1)^2\) with \(5y\) in \(J\):</p>
         <div class="equation">$$\min_{y\in\mathbb{R}}{\tilde{J}(y)=5y+(y-2)^2}=y^2+y+4,$$</div>
-        <p>which is a parabola with imagianry solutions. It can be written \(\left(y+\frac{1}{2}\right)^2+\frac{15}{4}\), that with \(y^*=-\frac{1}{2}\) yields to \(\tilde{J}\left(-\frac{1}{2}\right)=\frac{15}{4}\), that is different from \(J(1,0)=4\). So optimal solution to this problem cannot yield solutions to the original problem <a href="#3_iii_anchor">[iii]</a>.</p>
+        <p>which is a parabola with imaginary solutions. It can be written \(\left(y+\frac{1}{2}\right)^2+\frac{15}{4}\), that with \(y^*=-\frac{1}{2}\) yields to \(\tilde{J}\left(-\frac{1}{2}\right)=\frac{15}{4}\), that is different from \(J(1,0)=4\). So optimal solution to this problem cannot yield solutions to the original problem <a href="#3_iii_anchor">[iii]</a>.</p>
+
+
+        <h3>Exercise 5</h3>
+
+        <div class="exercise">
+            <p>Consider the problem:</p>
+            <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^2}{J(\mathbf{x})=-2x_1+x_2}\,\,\,\text{s.t.}\,\,\,\begin{cases}
+                    (1-x_1)^3-x_2\geq 0\\
+                    x_2+\frac{1}{4}x_1^2-1\geq 0
+                \end{cases},$$</div>
+            <p>The optimal solution is \(\mathbf{x}^*=(0,1)^T\); both \(c_1,c_2\) are active (\(\in\mathcal{A}(\mathbf{x})\)).
+                <ol type="i">
+                    <li id="0_i_anchor">check if the LICQ holds for \(\mathbf{x}^*\),</li>
+                    <li id="0_ii_anchor">check if the KKT conditions are satisfied, and</li>
+                    <li id="0_ii_anchor">check if the second-order necessary/sufficient conditions are satisfied.</li>
+                </ol>
+            </p>
+        </div>
     </article>
 </div>
 
