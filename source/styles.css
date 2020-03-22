@@ -146,6 +146,10 @@ div.equation {
     overflow: auto;
 }
 
+div.table {
+    overflow: auto;
+}
+
 div.doi {
     float: right;
 }
