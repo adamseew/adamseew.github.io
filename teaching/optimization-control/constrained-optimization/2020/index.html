@@ -29,7 +29,7 @@
             <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^2}{J(\mathbf{x})=2x_1+x_2}\,\,\,\text{s.t.}\,\,\,x_1^2+x_2^2-2=0,$$</div>
             <p>
                 <ol type="i">
-                    <li id="0_i_anchor">find all extreme points, and</li>
+                    <li id="0_i_anchor">find all the extreme points, and</li>
                     <li id="0_ii_anchor">check the KKT conditions at the extreme points.</li>
                 </ol>
             </p>
@@ -42,7 +42,7 @@
             <div class="equation">$$H=\{\mathbf{x}\in\,\mathbb{R}^n\,\text{s.t.}\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0\},$$</div>
             <p>where \(\mathbf{a}\in\,\mathbb{R}^n,\,\alpha\in\,\mathbb{R}\) are given:
                 <ol type="i">
-                    <li id="1_i_anchor">formulate and solve the optimization problem for finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean norm.</li>
+                    <li id="1_i_anchor">formulate and solve the optimization problem of finding the point \(\mathbf{x}^*\in H\) with the smallest Euclidean norm.</li>
                 </ol>
             </p>
         </div>
@@ -61,9 +61,9 @@
                     <figcaption>b. norm in 3D (\(\mathbb{R}^3\))</figcaption>
                 </figure>
             </div>
-            <p>But what does it mean physically? A point denoted with \(\mathbf{x}\) is a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the origin, as a consequence of the Pythagorean theorem.
+            <p>But what does it mean physically? Let's use the vector \(\mathbf{x}\) as a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the origin, as a consequence of the Pythagorean theorem.
             </p>
-            <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the norm that you just found, and you'll see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
+            <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in a more complex scenario, in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the line the measures the norm that you have just found. You can see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
         </div>
         <p>The optimization problem can be written:</p>
         <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^n}{J(\mathbf{x})=\lVert\mathbf{x}\rVert^2}
@@ -74,7 +74,7 @@
         <div class="hint">
             <p>What are the <b>KKT conditions</b>?</p>
 
-            <p>KKT condition is the first-order necessary condition for optimality (well, conditions as it is a set of them), and you express them with the following <span class="important">th</span>: suppose \(x^*\) is a local minimum, \(J,c_i\) are continuously differentiable. \(\exists\) a Lagrange multiplier vector \(\mathbf{\lambda}^*\) with components \(\lambda_i^*, i\in\mathcal{E}\cup\mathcal{I}\) (meaning there is one \(\lambda\) for each equality and inequality constraint) s.t.:
+            <p>KKT condition is the first-order necessary condition for optimality (to be consistent conditions as it is a set of them), and you express them with the following <span class="important">th</span>: suppose \(x^*\) is a local minimum, \(J,c_i\) are continuously differentiable. \(\exists\) a Lagrange multiplier vector \(\mathbf{\lambda}^*\) with components \(\lambda_i^*, i\in\mathcal{E}\cup\mathcal{I}\) (meaning there is one \(\lambda\) for each equality and inequality constraint) s.t.:
                 <ol type="1">
                     <li>\(\nabla_x\mathcal{L}(x^*,\lambda^*)=0\), this is the stationarity condition,</li>
                     <li>\(c_i(x^*)=0,\,\forall i\in\mathcal{E}\), recall \(\mathcal{E}\) are the equality constraints,</li>
@@ -83,9 +83,9 @@
                     <li>\(\lambda_i^*c_i(x^*)\geq 0,\,\forall i\in\mathcal{E}\cup\mathcal{I}\), this is the complementarity condition.</li>
                 </ol>
             </p>
-            <p>Ok, nice. But what is the <b>\(\mathcal{L}\) Lagrange function</b> or Lagrangian?</p>
+            <p>Ok. But what is the <b>\(\mathcal{L}\) Lagrange function</b> or Lagrangian?</p>
             <p><span class="important">def</span>: the Lagrangian is defined \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=J(\mathbf{x})-\sum_{i\in\mathcal{E}\cup\mathcal{I}}{\lambda_ic_i(x)}\) where \(\lambda_i\) are the lagrange multipliers.</p>
-            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanics into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution.</p>
+            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanics into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution. That we use a lot in robotics!</p>
         </div>
 
         <p>In our case, the Lagrangian is:</p>
@@ -93,12 +93,12 @@
             \mathcal{L}(\mathbf{x},\mathbf{\lambda})=\lVert\mathbf{x}\rVert^2-\lambda_1(\mathbf{a}^T\mathbf{x}+\alpha),
         $$</div>
         <p>now, for simplicity let's suppose we are dealing with just one element in the vector \(\mathbf{x}=x\) (and thus also \(\mathbf{a}=a\)). The first derivative of the Lagrangian is: \(\nabla_x\mathcal{L}(x,\lambda)=2x-\lambda_1a\), and the second is: \(\nabla_{xx}\mathcal{L}(x,\lambda)=2\).</p>
-        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions, to find the points with smallest Euclidean norm. The (1) condition can be also written:</p>
+        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions to find the points with smallest Euclidean norm. The condition (1) can be also written:</p>
         <div class="equation">$$
             \nabla_x\mathcal{L}(x^*,\lambda^*)=2x^*-\lambda_1^*a=0,$$$$
             x^*=\frac{\lambda_1^*}{2}a,
         $$</div>
-        <p>while the (5) condition implies that \(\lambda_1\) or \(c_1\) is zero:</p>
+        <p>while the condition (5) implies that \(\lambda_1\) or \(c_1\) is zero:</p>
         <div class="equation">$$
             \lambda_1^*=0,$$$$
             ax^*+\alpha=\frac{\lambda_1^* a^2}{2}+\alpha=0,
@@ -106,7 +106,7 @@
         <p>note that we wrote the above equation by substituting the value of \(x^*\) that we found using the KKT condition (1). Depending on \(\alpha\), there are thus two cases to satisfy KKT:
             <ol type="1">
                 <li>when \(\alpha=0\), to have \(ax^*=\frac{\lambda_1^* a^2}{2}=0\) we clearly need \(x^*=0,\lambda_1^*=0\) <a href="#1_i_anchor">[i]</a>, and</li>
-                <li>when \(\alpha\neq 0\), to have:<br/>
+                <li>when \(\alpha\neq 0\):<br/>
                     \(ax^*+\alpha=0,\,ax^*=-\alpha\,\implies x^*=-\frac{\alpha}{a}\)<br/>
                     \(\lambda_1^*a^2\cdot\frac{1}{2}+\alpha=0\,\implies \lambda_1^*=-\alpha\frac{2}{a^2}\) <a href="#1_i_anchor">[i]</a>.
                 </li>
@@ -134,7 +134,7 @@
             <p>
                 <ol type="i">
                     <li id="3_i_anchor">find all the KKT points and investigate if LICQ is satisfied,</li>
-                    <li id="3_ii_anchor">which of these points are solution, and</li>
+                    <li id="3_ii_anchor">which of these points are the solution, and</li>
                     <li id="3_iii_anchor">by substituting the constraint into \(J\) (eliminating \(x\)) we get an unconstrained optimization problem. Show how the solution differs from the constrained problem.</li>
                 </ol>
             </p>
@@ -153,7 +153,7 @@
                 2(y-2)+5\lambda_1
             \end{pmatrix},$$
         </div>
-        <p>Using the KKT condition (1) first and (2) later, we have that:</p>
+        <p>Using the KKT condition (1) first, and (2) later, we have:</p>
         <div class="equation">
             $$\nabla_\mathbf{x}\mathcal{L}(x^*,y^*,\lambda_1^*)=0\implies\begin{cases}
             2(1-\lambda_1^*)(x^*-1)=0\\
@@ -161,7 +161,7 @@
             \end{cases}$$
             $$\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,c_1(x^*)=0\implies (x^*-1)^2-5y^*=0.$$
         </div>
-        <p>By putting these three equations in system and solving for the variables, we obtain the following optimal states and the lambda multiplier: \(x^*=1, y^*=0, \lambda_1^*=\frac{4}{5}\) <a href="#3_i_anchor">[i]</a>. Note that we have used just the KKT conditions (1&mdash;2); why? Well, think about it. So we have just an equality constraint here, which indicates that \(c_1\) at the optimal point should be zero. Thus condition (5) is true as it contains \(c_1\), which we say should be zero, along with the multiplier. Conditions (3&mdash;4) are both for inequality constraints only, so we don't consider them here.</p>
+        <p>By solving these three equations, we obtain the following optimal points and the lambda multiplier: \(x^*=1, y^*=0, \lambda_1^*=\frac{4}{5}\) <a href="#3_i_anchor">[i]</a>. Note that we have used just the KKT conditions (1&mdash;2); why? Well, think about it. So we have just an equality constraint here, which indicates that \(c_1\) at the optimal point should be zero. Thus condition (5) is true as it contains \(c_1\), which we say should be zero. Conditions (3&mdash;4) are both for inequality constraints only, so we don't consider them here.</p>
 
         <div class="hint">
             <p>What is <b>LICQ</b>?</p>
@@ -184,7 +184,7 @@
             \end{pmatrix}=\begin{pmatrix}0\\-5\end{pmatrix},$$
         </div>
         
-        <p>so the partial derivatives of the constraint are lineary indipendent, and LICQ holds <a href="#3_i_anchor">[i]</a>.</p>
+        <p>so the partial derivatives of the constraint are linearly independent, and LICQ holds <a href="#3_i_anchor">[i]</a>.</p>
 
         <div class="hint">
             <p>To proof that a point is actual solution, we need <b>second-order optimality condition</b> for a local minimum.</p>
