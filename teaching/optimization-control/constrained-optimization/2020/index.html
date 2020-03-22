@@ -38,7 +38,7 @@
         <h3>Exercise 2</h3>
         
         <div class="exercise">
-            <p>Consider the half space defined by (this is the exercise on page 353 n. 12.14 in the textbook):</p>
+            <p>Consider the half-space defined by (this is the exercise on page 353 n. 12.14 in the textbook):</p>
             <div class="equation">$$H=\{\mathbf{x}\in\,\mathbb{R}^n\,\text{s.t.}\,\mathbf{a}^T\mathbf{x}+\alpha\geq 0\},$$</div>
             <p>where \(\mathbf{a}\in\,\mathbb{R}^n,\,\alpha\in\,\mathbb{R}\) are given:
                 <ol type="i">
@@ -54,16 +54,16 @@
             <div class="figure">
                 <figure>
                     <img class="pure-img img200" src="euclidean-distance1.png" alt="Euclidean distance"/>
-                    <figcaption>a. norm in 2D (\(\mathbb{R}^2\))</figcaption>
+                    <figcaption>a. the norm in 2D (\(\mathbb{R}^2\))</figcaption>
                 </figure>
                 <figure>
                     <img class="pure-img img200" src="euclidean-distance2.png" alt="Euclidean distance"/>
-                    <figcaption>b. norm in 3D (\(\mathbb{R}^3\))</figcaption>
+                    <figcaption>b. the norm in 3D (\(\mathbb{R}^3\))</figcaption>
                 </figure>
             </div>
             <p>But what does it mean physically? Let's use the vector \(\mathbf{x}\) as a Euclidean vector, that basically means a point in the Euclidean space \(\mathbb{R}^n\). The Euclidean norm just measures the length of the vector \(\mathbf{x}\) from the origin, as a consequence of the Pythagorean theorem.
             </p>
-            <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle you can evaluate the norm in a more complex scenario, in any dimensional space. In 3D, constraint \(y\) axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the line the measures the norm that you have just found. You can see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
+            <p>In the image (a) you can see what happens if you have a point \(\mathbf{x}_A=(2,3)\). The norm is clearly \(\lVert \mathbf{x}_A \rVert=\sqrt{13}\). This was easy; with the same principle, you can evaluate the norm in a more complex scenario, in any dimensional space. In 3D, constraint \(y\)-axis to zero first, and you will find the norm \(\lVert \mathbf{x}_B' \rVert=\sqrt{2}\). Now put a "rectangle" with sizes \(1\times \sqrt{2}\) as illustrated in (b) on the line that measures the norm that you have just found. You can see that the 3D norm is \(\lVert \mathbf{x}_B \rVert=\sqrt{3}\) for the point \(\mathbf{x}_B=(1,1,1)\).</p>
         </div>
         <p>The optimization problem can be written:</p>
         <div class="equation">$$\min_{\mathbf{x}\in\mathbb{R}^n}{J(\mathbf{x})=\lVert\mathbf{x}\rVert^2}
@@ -84,9 +84,10 @@
                 </ol>
             </p>
             <p>Ok. But what is the <b>\(\mathcal{L}\) Lagrange function</b> or Lagrangian?</p>
-            <p><span class="important">def</span>: the Lagrangian is defined \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=J(\mathbf{x})-\sum_{i\in\mathcal{E}\cup\mathcal{I}}{\lambda_ic_i(x)}\) where \(\lambda_i\) are the lagrange multipliers.</p>
-            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanics into, well, Lagrange mechanics. Which is very important in the state-space representation of a system evolution. That we use a lot in robotics!</p>
+            <p><span class="important">def</span>: the Lagrangian is defined \(\mathcal{L}(\mathbf{x},\mathbf{\lambda})=J(\mathbf{x})-\sum_{i\in\mathcal{E}\cup\mathcal{I}}{\lambda_ic_i(x)}\) where \(\lambda_i\) are the Lagrange multipliers.</p>
+            <p>Lagrangian is named after Joseph-Louis Lagrange (1736-1823), other than a very interesting natural scientist (<a class="source" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">read some more about him</a>), he reformulated Newton's mechanics into, well, Lagrange mechanics. Which is very important in the state-space representation of system evolution. That we use a lot in robotics!</p>
         </div>
+        <!---->
 
         <p>In our case, the Lagrangian is:</p>
         <div class="equation">$$
