@@ -15,7 +15,7 @@ body.dark {
     border-left: 10px solid;
     border-top: 0px;
     border-right: 0px;
-    border-image: linear-gradient(to right, rgb(126, 226, 168) 0%, rgb(255, 255, 255) 100%);
+    border-image: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(241, 88, 0) 100%);
     border-image-slice: 1;
     background-color: rgb(42, 42, 42);
     color: whitesmoke;
@@ -59,7 +59,7 @@ body.black:not(.dark) h1, body.black:not(.dark) h2, body.black:not(.dark) h4, h1
 }
 
 body.dark h1, body.dark h2, body.dark h4 {
-    color: rgb(126, 226, 168) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 p, div {
@@ -88,7 +88,7 @@ body:not(.dark) nav li.pure-menu-selected a {
 }
 
 body.dark nav li.pure-menu-selected:not(.dark) a {
-    color: rgb(126, 226, 168) !important;
+    color: rgb(185, 185, 185) !important;
 }
 
 article a:hover:not(.source) {
@@ -110,7 +110,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
 }
 
 body.dark .top-menu {
-    border-left: 10px solid rgb(126, 226, 168);
+    border-left: 10px solid rgb(255, 255, 255);
 }
 
 .index-img-div {
