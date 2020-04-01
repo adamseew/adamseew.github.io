@@ -27,9 +27,9 @@
         <h2>NLP solvers: an overview</h2>
 
         <p>Optimization problems are used to obtain an exact solution (within a certain tolerance) in a number of important scientific applications, such as optimal control of a system driven by a complex differential dynamics, and trajectory optimization of manned space vehicles. In Apollo 11 mission "an iterative steepest ascent computational procedure was used to determine control-variable time histories (angle of attack and roll angle) which yield trajectories satisfying specified initial, in-flight, and terminal constraints while optimizing selected functions of the terminal state" (a very good read and reference <a href="https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19670015714.pdf">here</a>). </p>
-        <p>So far we have studied techniques to apply the optimization theory to different mathematical problems, that we classified into two categories based on the order of the cost function and the constraints. Nonlinear programming or NLP is a difficult field so it's always convenient to use special cases for study. Note that the meaning of "Programming" is "planning", the theory behind was only applied to real algorithms later so the relation with computer programming is purely accidental. Let's see the two categories to classify our problems.
+        <p>So far we have studied techniques to apply the optimization theory to different mathematical problems, that we classified into two categories based on the order of the cost function and the constraints. Nonlinear programming or NLP is a difficult field so it's always convenient to use special cases for study. Note that the meaning of "programming" is "planning", the theory behind was only applied to real algorithms later so the relation with computer programming is purely accidental. Let's see the two categories to classify our problems.
         </p>
-        <p>Problems with linear cost function and constraints belong to the category of linear problems and can be solved involving <b>linear programming</b> or LP. There are two different approaches that we studied to solve LP problems, the <b>simplex method</b> and the <b>interior-point method</b>.
+        <p>Problems with linear cost function and constraints belong to the category of linear problems and can be solved involving <b>linear programming</b> or LP. There are two different approaches that we studied to solve LP problems, the <b>simplex method</b>, and the <b>interior-point method</b>.
         </p>
         <p>Problems with a nonlinear quadratic cost function and linear constraints are part of the class of quadratic problems and can be solved using <b>quadratic programming</b> or QP. We have studied the <b>sequential quadratic programming method</b> that solves a QP problem at each iterate until it reaches a (tolerable) solution.
         </p>
@@ -42,10 +42,10 @@
         <p>But enough theory! Let's have a look at the most famous solvers. The next set of exercises introduces you to some of them!</p>
 
         <h3>Exercise 1</h3>
-        <p><b>IPOPT</b> is the most famous open source optimization package for large-scale non linear optimization. It can be used to address general NLP problems in the form as we described in the equation above. You can download and compile the source by your own, or just download the executable to use with the modeling language (skip <a href="#executable">here</a>).</p>
+        <p><b>IPOPT</b> is the most famous open-source optimization package for large-scale nonlinear optimization. It can be used to address general NLP problems in the form as we described in the equation above. You can download and compile the source on your own, or just download the executable to use with the modeling language (skip <a href="#executable">here</a>).</p>
           
         <h3>Compile IPOPT source code</h3>
-        <p>Internally, IPOPT implements an interior-point line-search filter method, a variation of the interior-point method that we learned in LP. It is particularly suitable for large scale problems with many constraints (with the assumption that the Jacobian matrix of the constraint function is sparse). Take also on mind that the optimizer search for a local minimum, thus if the problem is non-convex the solution strongly depends on the initial guess.</p>
+        <p>Internally, IPOPT implements an interior-point line-search filter method, a variation of the interior-point method that we learned in LP. It is particularly suitable for large scale problems with many constraints (with the assumption that the Jacobian matrix of the constraint function is sparse). Take also in mind that the optimizer searches for a local minimum, thus if the problem is non-convex the solution strongly depends on the initial guess.</p>
         <p>First, some tools might be necessary</p>
         <pre><code>sudo apt-get install gcc g++ gfortran git cmake liblapack-dev pkg-config --install-recommends</code></pre>
         <p>Let's download IPOPT and the third-party dependencies</p>
@@ -75,7 +75,13 @@ mkdir ~/Ampl; tar xzf amplide.linux64.tgz -C ~/Ampl</code></pre>
         <pre><code>cd ~/Ampl/amplide.linux64/amplide
 ./amplide</code></pre>
         <p>Now you need to add IPOPT path to the IDE so Ampl will recognize it. Go to Window, Preferences, choose Search Path tab on the left, and click Add. Now browse to the directory where your IPOPT source (<code>ipopt</code>) is located (<code>~/Ipopt</code> or <code>~/Ipopt-3.12.12/build/bin</code>) and restart the IDE.</p>
-        <p>Once everything is working, let's model the following optimization problem (Problem 71 from standard <a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">Hock-Schittkowski collection</a>)
+        
+        <p>Alternatively, you can use Ampl as a command-line tool. First, add it to the environment variable, so you can run it directly typing <code>ampl</code></p>
+        <pre><code>cd ~/Ampl/amplide.linux64
+echo 'export PATH=${PATH}:'$PWD >> ~/.bashrc
+source ~/.bashrc</code></pre>
+        
+        <p>Once everything is working, let's model the following optimization problem (Problem 71 from the standard Hock-Schittkowski collection)
             <div class="equation">$$
                 \min_x f(x)=x_1x_4(x_1+x_2+x_3)+x_3\;\;\;\mathrm{s.t.}\;\;\;\Omega=
                 \begin{cases} x_1x_2x_3x_4-25\geq 0 \\ x_1^2+x_2^2+x_3^2+x_4^2-40=0 \\ 1\leq x_i\leq 5 & i\in {1,\dots,4} \end{cases},
@@ -84,6 +90,8 @@ mkdir ~/Ampl; tar xzf amplide.linux64.tgz -C ~/Ampl</code></pre>
         </p>
         <pre><code>option solver ipopt;
 reset;</pre></code>
+        <p>or type the following command if you are using Ampl as a command line tool from the IPOPT executable folder</p>
+        <pre><code>option solver './ipopt';</pre></code>
         <p>to declare the variables and define the bounds use</p>
         <pre><code>var x1 >= 1, <= 5;
 var x2 >= 1, <= 5;
@@ -95,21 +103,28 @@ var x4 >= 1, <= 5;</pre></code>
         <pre><code>subject to inequality1: x1 * x2 * x3 * x4 >= 25; # inequality constraints
 subject to inequality2: 40 <= x1^2 + x2^2 + x3^2 + x4^2 <= 40; # equality constraint
 solve;</code></pre>
-        <p>With <code>solve</code> command you will see a lot of statistics on the obtained solution, you can have a look <a href="https://www.coin-or.org/Ipopt/documentation/node36.html">here</a> to know what does the showed data mean with respect to the interior-point algorithm. If you have the string "<code>Optimal Solution Found</code>" at the end of the output, it means the solution has been found.</p>
+        <p>With <code>solve</code> command you will see a lot of statistics on the obtained solution, you can have a look <a href="https://coin-or.github.io/Ipopt/OUTPUT.html">here</a> to know what does the showed data mean with respect to the interior-point algorithm. If you have the string "<code>Optimal Solution Found</code>" at the end of the output, it means the solution has been found.</p>
         <p>Let's check if the solution is correct. Type the following command for all the variables \(x_i\;\mathrm{s.t.}\;i\in{1,\dots,4}\)</p>
         <pre><code>display x1;</code></pre>
-        <p>and compare the result with the analytic result from Problem 71 <a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">here</a>.</p>
+        <p>and compare the result with the analytic result from Problem 71 <a href="problem_71.pdf">here</a>.</p>
           
         <h3 id="exercise-3">Exercise 3</h3>
-        <p>Now it's your turn! Try to model Problem 12.19 from the book and compare it with the one that we solved during constrained optimization module <a href="../constrained-optimization/20190220102348015.pdf">here</a>. Is the optimal solution \(x^*\) the same?</p>
+        <p>Now it's your turn! Try to model Problem 12.19 from the book and compare it with the one that we solved during constrained optimization module <a href="../constrained-optimization/20190220102348015.pdf">here</a> and Exercise 5 <a href="../constrained-optimization/2020/">here</a>. Is the optimal solution \(x^*\) the same?</p>
           
         <h3>Exercise 4</h3>
-        <p>You are familiar with IPOPT; it's a great solver and it's open-source so you can use and personalize it to your needs. But many times you will encounter the problem of choosing the right solver for your NLPs. So let's have a look on the others (remember always to <code>reset</code> between two different solvers executions in Ampl).</p>
+        <p>You are familiar with IPOPT; it's a great solver and it's open-source so you can use and personalize it to your needs. But many times you will encounter the problem of choosing the right solver for your NLPs. So let's have a look at the others (remember always to <code>reset</code> between two different solvers executions in Ampl).</p>
         <p><b>SNOPT</b> is among the most famous commercial solvers. It uses sequential quadratic programming SQP with quasi-Newton approximations of the Hessian (of the Lagrangian). SNOPT is widely used for many problems involving trajectory optimization.</p>
         <p><b>Knitro</b> is a complete solver with a number of different algorithms from interior-point methods (that normally follows a path in the feasible region), to active set algorithms as SQP (that stays at the boundaries).</p>
         <p>Try to run <a href="#exercise-3">Exercise 3</a> with different solvers and see the difference in the computed solution. For instance, you can switch the solver to SNOPT (included in Ampl) by typing</p>
         <pre><code>option solver snopt;</code></pre>
+        <p>or run the modeling environment as a command-line tool from the Ampl directory where the solvers are stored</p>
+        <pre><code>cd ~/Ampl/amplide.linux64
+ampl
+option solver './snopt';</code></pre>
         <p>which one is the best for this problem? Hint: evaluate the goodness of a solver by the accuracy (you should also include other parameters, as execution time, in a real scenario).</p>
+
+        <h3>Exercise 5</h3>
+        <p>Try to optimize the Example 1 and 2 from the theory slides. What are the solutions?</p>
 
         <h3>Appendix</h3>
         <p>Note that you can use IPOPT (or any other solver that is compatible with the standard modeling languages), in a programming language (C/C++, Python, Matlab), but you must implement following functions to provide IPOPT with the necessary mathematical evaluations
