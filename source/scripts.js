@@ -130,23 +130,17 @@ ready(function(){
     x.addListener(adjust_menu);
 
     window.onscroll = function(){ 
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            // check if the 'mobile menu' is on
-            if (!auto_hide)
-                return;
-
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos / currentScrollPos > 1.34) {
-                document.getElementsByClassName("pure-u-md-1-5")[0].removeEventListener('mouseover', expand_menu);
-                document.getElementsByClassName("pure-u-md-4-5")[0].removeEventListener('mouseover', shrink_menu);
-                expand_menu();
-            } else if (prevScrollpos / currentScrollPos) {
-                document.getElementsByClassName("pure-u-md-1-5")[0].addEventListener('mouseover', expand_menu);
-                document.getElementsByClassName("pure-u-md-4-5")[0].addEventListener('mouseover', shrink_menu);
-                shrink_menu();
-            }
-            prevScrollpos = currentScrollPos;
+        // check if the 'mobile menu' is on
+        if (!auto_hide)
+            return;
+        if (window.pageYOffset <= 0) {
+            document.getElementsByClassName("pure-u-md-1-5")[0].removeEventListener('mouseover', expand_menu);
+            document.getElementsByClassName("pure-u-md-4-5")[0].removeEventListener('mouseover', shrink_menu);
+            expand_menu();
+        } else if (window.pageYOffset > 0) {
+            document.getElementsByClassName("pure-u-md-1-5")[0].addEventListener('mouseover', expand_menu);
+            document.getElementsByClassName("pure-u-md-4-5")[0].addEventListener('mouseover', shrink_menu);
+            shrink_menu();
         }
     };
 });
