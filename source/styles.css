@@ -113,7 +113,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     border-left: 10px solid rgb(0,51,102);
     width: calc(100% - 10px) !important;
     height: fit-content;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
 }
