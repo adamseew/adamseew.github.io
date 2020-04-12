@@ -106,7 +106,7 @@ ready(function(){
             document.getElementById('menu-div1').classList.remove('top-menu');
             document.getElementsByTagName('body')[0].style.paddingTop = 0;
             document.getElementById('menu-div2').classList.add('custom-restricted-width');
-            document.getElementsByTagName('nav')[0].style.padding = '16px';
+            document.getElementsByTagName('nav')[0].style.padding = '16px 12px 16px 0';
         } else {
             auto_hide = false;
             document.getElementsByClassName("pure-u-md-1-5")[0].style.transition = 'none';
@@ -121,7 +121,7 @@ ready(function(){
             document.getElementById('menu-div1').classList.add('top-menu');
             document.getElementsByTagName('body')[0].style.paddingTop = '48px';
             document.getElementById('menu-div2').classList.remove('custom-restricted-width');
-            document.getElementsByTagName('nav')[0].style.padding = '6px 16px';
+            document.getElementsByTagName('nav')[0].style.padding = '2.6px 16px';
         }
     }
 
