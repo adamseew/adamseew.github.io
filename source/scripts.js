@@ -88,8 +88,8 @@ ready(function(){
 
         document.getElementsByClassName("pure-u-md-1-5")[0].style.transition = 'all 300ms ease';
         document.getElementsByClassName("pure-u-md-4-5")[0].style.transition = 'all 300ms ease';
-        document.getElementsByClassName("pure-u-md-1-5")[0].style.width = "5.5em";
-        document.getElementsByClassName("pure-u-md-4-5")[0].style.width = 'calc(100% - 5.5em)';
+        document.getElementsByClassName("pure-u-md-1-5")[0].style.width = "4.6em";
+        document.getElementsByClassName("pure-u-md-4-5")[0].style.width = 'calc(100% - 4.6em)';
         var menu_link = document.getElementsByClassName("pure-menu-link");
         for(var i = 0; i < menu_link.length; i++){
             menu_link[i].innerHTML = '[ ' + menu_link[i].innerHTML[2] + ' ]';
