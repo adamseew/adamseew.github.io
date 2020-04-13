@@ -187,6 +187,21 @@ body.dark .top-menu {
     }
 }
 
+@media only screen and (max-width: 64em) {
+    #social-box {
+        display: none;
+    }
+}
+
+#social-box {
+    background-color:rgb(241, 241, 241); 
+    margin:-16px -16px -16px 16px;
+}
+
+#social-box #inner-social-box {
+    padding: 2.52em 10px 10px 10px;
+}
+
 code {
     background-color: rgb(238, 238, 238);
     font-size: 14px !important;
