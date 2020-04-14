@@ -123,6 +123,15 @@ article a:not(.source) {
     color: black;
 }
 
+#inner-social-box a {
+    text-decoration: none;
+    color: initial;
+}
+
+#inner-social-box a {
+    text-decoration: none !important;
+}
+
 div.entries > div:nth-of-type(odd) {
     background-color: #f6f6f6;
 }
@@ -185,9 +194,6 @@ body.dark .top-menu {
         float: none;
         padding: 0;
     }
-}
-
-@media only screen and (max-width: 64em) {
     #social-box {
         display: none;
     }
@@ -202,11 +208,22 @@ body.dark .top-menu {
     padding: 2.52em 10px 10px 10px;
 }
 
-#social-box #inner-social-box .header, #social-box #inner-social-box .body {
+#social-box #inner-social-box .header, #social-box #inner-social-box .header .left, #social-box #inner-social-box .body {
     font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;
     font-size: 14.8px !important;
     background-color: white;
     border: 1px solid rgb(228, 228, 228);
+}
+
+#social-box #inner-social-box .header .left {
+    width: 80%;
+    border: none !important;
+    background-color: inherit !important;
+}
+
+#social-box #inner-social-box .header .right {
+    width: 20%;
+    text-align: right;
 }
 
 #social-box #inner-social-box .header {
@@ -215,6 +232,7 @@ body.dark .top-menu {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
     color: #777;
+    display: flex;
 }
 
 .fa-twitter {
@@ -238,8 +256,8 @@ body.dark .top-menu {
 
 
 #social-box #inner-social-box .body img.social-img {
-    border-right: 1px solid white;
-    width: calc(100% - 1px);
+    border-right: 1.3px solid white;
+    width: calc(100% - 1.3px);
     height: 0;
     padding-bottom: 100%;
     background-size: cover, contain;
