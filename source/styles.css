@@ -219,6 +219,9 @@ body.dark .top-menu {
     width: 80%;
     border: none !important;
     background-color: inherit !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #social-box #inner-social-box .header .right {
