@@ -256,8 +256,8 @@ div.play-icon {
     border-radius: 29px;
 }
 
-div.play-icon i {
-    font-size: 42px;
+i.fa-play-circle {
+    font-size: 42px !important;
     color: #38a1f3 !important;
 }
 
