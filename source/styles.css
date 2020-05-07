@@ -254,12 +254,17 @@ div.play-icon {
     width: 50px;
     height: 50px;
     border-radius: 25px;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 i.fa-play-circle {
     font-size: 42px !important;
     color: #38a1f3 !important;
-    padding: 4px;
+    margin: 0 !important;
+    padding: 4px !important;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 #social-box #inner-social-box .header:hover, #social-box #inner-social-box .body:hover {
