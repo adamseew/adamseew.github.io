@@ -259,7 +259,7 @@ div.play-icon {
 i.fa-play-circle {
     font-size: 42px !important;
     color: #38a1f3 !important;
-    padding: 4px !important;
+    padding: 4.8px 4px 4px 4px !important;
 }
 
 #social-box #inner-social-box .header:hover, #social-box #inner-social-box .body:hover {
