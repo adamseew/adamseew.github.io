@@ -117,7 +117,7 @@ p, div {
     line-height: 1.8 !important;
 }
 
-article a:not(.source) {
+article a:not(.source):not(.twitter) {
     background-color: rgb(229,240,251) !important;
     text-decoration: none;
     color: black;
@@ -160,7 +160,7 @@ body.dark nav li.pure-menu-selected:not(.dark) a {
     color: rgb(185, 185, 185) !important;
 }
 
-article a:hover:not(.source) {
+article a:hover:not(.source):not(.twitter) {
     background-color: rgb(213,227,240) !important;
     text-decoration: underline;
 }
@@ -243,6 +243,10 @@ body.dark .top-menu {
 
 .fa-twitter {
     color: #38a1f3;
+}
+
+a.twitter {
+    color: #38a1f3 !important;
 }
 
 div.play-icon {
