@@ -123,6 +123,10 @@ article a:not(.source):not(.twitter) {
     color: black;
 }
 
+article #inner-social-box a {
+    background-color: unset !important;
+}
+
 #inner-social-box a {
     text-decoration: none;
     color: initial;
@@ -247,6 +251,9 @@ body.dark .top-menu {
 
 a.twitter {
     color: #38a1f3 !important;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 div.play-icon {
@@ -280,6 +287,13 @@ i.fa-play-circle {
     padding: 10.8px 16px 10.8px 16px;
     display: inline-block;
     position: relative;
+    display: inline-block;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 #social-box #inner-social-box .body div.social-img {
