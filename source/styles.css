@@ -41,7 +41,7 @@ body:not(.dark) {
     border-left: 10px solid;
     border-top: 0px;
     border-right: 0px;
-    border-color: rgb(0,51,102);
+    border-color: #7ed0e9;
     border-image-slice: 1;
 }
 
@@ -68,13 +68,18 @@ body.black article {
     padding: 16px !important;
 }
 
+article div.inner {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
 article {
     background-color: white;
     padding: 16px !important;
 }
 
 header, #menu-div1, nav {
-    background-color: rgb(224,224,224) !important;
+    background-color: rgb(243, 243, 243) !important;
 }
 
 body.black header, body.black #menu-div1, body.black nav {
@@ -92,15 +97,32 @@ body.black header, body.black #menu-div1, body.black nav {
 
 h1, h2, h3, h4 {
     /*Signika, or the old font*/
-    font-family: "Signika", Georgia, Times, "Times New Roman", serif !important;
+    font-family: "Signika", Helvetica, sans-serif !important;
     color: rgb(0,51,102);
     font-weight: 600;
 }
 
+h1 {
+    font-size: xx-large !important;
+}
+
+h2, h3, h4 {
+    font-size: x-large !important;
+}
+
 .pure-menu-link {
-    font-family: "Signika", Georgia, Times, "Times New Roman", serif !important;
-    font-size: 15.6px;
+    font-family: "Signika", Helvetica, sans-serif !important;
+    font-size: larger;
     font-weight: 300;
+}
+
+.pure-menu-link:hover:not(.pure-menu-selected) {
+    background-color: rgb(71, 107, 144) !important;
+    color: white !important;
+}
+
+.pure-table thead {
+    background-color: #f2f2f2 !important;
 }
 
 body.black:not(.dark) h1, body.black:not(.dark) h2, body.black:not(.dark) h4, h1.black, h2.black, h3.black, h4.black {
@@ -112,14 +134,13 @@ body.dark h1, body.dark h2, body.dark h4 {
 }
 
 p, div {
-    font-family: Georgia, Times, "Times New Roman", serif !important;
-    font-size: 16px !important;
+    font-family: Helvetica, sans-serif !important;
     line-height: 1.8 !important;
 }
 
 article a:not(.source):not(.twitter) {
-    background-color: rgb(229,240,251) !important;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: #41b8dd;
     color: black;
 }
 
@@ -130,7 +151,7 @@ article #inner-social-box a {
 #social-box h2 {
     margin: 1.2em 0 -28px 0;
     padding: 16px 16px 0 16px;
-    color: rgb(121, 121, 121)
+    color: #41b8dd;
 }
 
 #inner-social-box a {
@@ -143,7 +164,7 @@ article #inner-social-box a {
 }
 
 div.entries > div:nth-of-type(odd) {
-    background-color: #f6f6f6;
+    background-color: #f8f8f8;
 }
 
 a.source, .journal-entry a.source, .conference-entry a.source {
@@ -156,27 +177,26 @@ body:not(.dark) nav li.pure-menu-selected a {
 }
 
 body:not(.dark) nav div:not(.pure-menu-horizontal) li.pure-menu-selected a {
-    border-left: 10px solid rgb(167, 167, 167) !important;
-    margin-left: -2px;
-    padding-left: 20px !important;
+    padding-left: 28px !important;
 }
 
 body:not(.dark) nav div:not(.pure-menu-horizontal) li:not(.pure-menu-selected) a  {
-    margin-left: 8px;
-    padding-left: 20px;
+    padding-left: 28px;
 }
 
 body.dark nav li.pure-menu-selected:not(.dark) a {
     color: rgb(185, 185, 185) !important;
 }
 
-article a:hover:not(.source):not(.twitter) {
-    background-color: rgb(213,227,240) !important;
+article a:hover:not(.source):not(.twitter):not(.twitter-link) {
+    color: #41b8dd !important;
     text-decoration: underline;
 }
 
 a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover {
     text-decoration: underline;
+    color: #41b8dd !important;
+    text-decoration-color: #41b8dd !important;
 }
 
 .top-menu {
@@ -213,7 +233,7 @@ body.dark .top-menu {
 }
 
 #social-box {
-    background-color:rgb(241, 241, 241); 
+    background-color:#eaf6fa; 
     margin:-16px -16px -16px 16px;
 }
 
@@ -222,10 +242,8 @@ body.dark .top-menu {
 }
 
 #social-box #inner-social-box .header, #social-box #inner-social-box .header .left, #social-box #inner-social-box .body {
-    font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;
-    font-size: 14.8px !important;
-    background-color: white;
-    border: 1px solid rgb(228, 228, 228);
+    background-color: #f1fcff;
+    border: 1px solid #d0dbdf;
 }
 
 #social-box #inner-social-box .header .left {
@@ -285,7 +303,7 @@ i.fa-play-circle {
 }
 
 #social-box #inner-social-box .header:hover, #social-box #inner-social-box .body:hover {
-    background-color: rgb(250, 250, 250);
+    background-color: #f8feff;
 }
 
 #social-box #inner-social-box .body {
@@ -316,9 +334,7 @@ i.fa-play-circle {
 }
 
 code {
-    background-color: rgb(238, 238, 238);
-    font-size: 14px !important;
-    text-align: center !important;
+    font-size: medium;
 }
 
 pre {
@@ -331,33 +347,19 @@ pre code {
     background-color: white !important;
 }
 
-b {
-    background-color: rgb(213, 240, 226);
-    text-decoration: none !important;
+b.journal {
+    text-decoration: underline;
+    text-decoration-color: rgb(248, 90, 16);
     font-weight: normal !important;
 }
 
-b.journal, span.journal {
-    background-color: rgb(250, 233, 224);
-    border: 1px solid rgb(241, 88, 0) !important;
-    text-decoration: none !important;
-    font-weight: normal !important;
-}
-
-body.black b.journal {
-    background-color: rgb(241, 88, 0) !important;
-    border: 1px solid rgb(250, 233, 224) !important;
-}
-
-b.conference, span.conference {
-    background-color: rgb(255, 254, 238);
-    border: 1px solid rgb(255, 238, 0) !important;
-    text-decoration: none !important;
+b.conference {
+    text-decoration: underline;
+    text-decoration-color: rgb(241, 207, 10);
     font-weight: normal !important;
 }
 
 span.conference, span.journal, span.details {
-    border: 1px solid #d8d8d8;
     padding: .3ex 1ex .3ex 1ex;
     margin: 0 .6ex 0 .4ex;
     text-align: center;
@@ -382,21 +384,18 @@ span.grayisch, div.grayisch {
 div.entry {
     padding: 2ex;
     margin: 0 -16px 5px -16px;
-    border-top: 1px dashed #d8d8d8;
 }
 
 div.exercise {
     padding: 2ex;
     margin: 0 -16px 5px -16px;
-    background-color:rgb(246, 246, 246);
-    border-top: 1px dashed #d8d8d8;
+    background-color: #f8f8f8;
 }
 
 div.hint {
     padding: 2ex;
     margin: 0 -16px 5px -16px;
-    background-color: rgb(242, 253, 247);
-    border-top: 1px dashed rgb(187, 226, 203);
+    background-color: #f1fcff;
 }
 
 #filter-select {
@@ -423,7 +422,7 @@ div.black-box {
     border-left: 10px solid;
     border-top: 0px;
     border-right: 0px;
-    border-image: linear-gradient(to right, white 0%, rgb(241, 88, 0) 100%);
+    border-color: white;
     border-image-slice: 1;
     background-color: rgb(66, 66, 66);    
     box-shadow: 0 0 16px rgb(30, 30, 30);
@@ -443,15 +442,22 @@ div.black-box div.black-box-content {
     padding-top: 4px !important;
 }
 
-body.black a {
-    background-color: rgb(112, 112, 112) !important;
-    text-decoration: none;
+body.black a:not(.pure-menu-link) {
+    text-decoration: underline;
+    text-decoration-color: #92e4fd;
     color: whitesmoke;
 }
 
-body.black a:hover {
-    background-color: rgb(97, 97, 97) !important;
-    text-decoration: underline;
+body.black a.pure-menu-link {
+    color: white;
+}
+
+body.black a.pure-menu-link:hover {
+    background-color: rgb(80, 80, 80) !important;
+}
+
+body.black a:hover:not(.pure-menu-link) {
+    color: #92e4fd;
 }
 
 img.img200 {
