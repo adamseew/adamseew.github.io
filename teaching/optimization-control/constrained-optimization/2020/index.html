@@ -94,7 +94,7 @@
             \mathcal{L}(\mathbf{x},\mathbf{\lambda})=\lVert\mathbf{x}\rVert^2-\lambda_1(\mathbf{a}^T\mathbf{x}+\alpha),
         $$</div>
         <p>now, for simplicity let's suppose we are dealing with just one element in the vector \(\mathbf{x}=x\) (and thus also \(\mathbf{a}=a\)). The first derivative of the Lagrangian is: \(\nabla_x\mathcal{L}(x,\lambda)=2x-\lambda_1a\), and the second is: \(\nabla_{xx}\mathcal{L}(x,\lambda)=2\).</p>
-        <p>We can notice that the second order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions to find the points with smallest Euclidean norm. The condition (1) can be also written:</p>
+        <p>We can notice that the second-order sufficient condition (we will see in detail in a latter exercise) is satisfied at all points (\(2>0\)). Let's use the KKT conditions to find the points with smallest Euclidean norm. The condition (1) can be also written:</p>
         <div class="equation">$$
             \nabla_x\mathcal{L}(x^*,\lambda^*)=2x^*-\lambda_1^*a=0,$$$$
             x^*=\frac{\lambda_1^*}{2}a,
@@ -107,9 +107,9 @@
         <p>note that we wrote the above equation by substituting the value of \(x^*\) that we found using the KKT condition (1). Depending on \(\alpha\), there are thus two cases to satisfy KKT:
             <ol type="1">
                 <li>when \(\alpha=0\), to have \(ax^*=\frac{\lambda_1^* a^2}{2}=0\) we clearly need \(x^*=0,\lambda_1^*=0\) <a href="#1_i_anchor">[i]</a>, and</li>
-                <li>when \(\alpha\neq 0\):<br/>
-                    \(ax^*+\alpha=0,\,ax^*=-\alpha\,\implies x^*=-\frac{\alpha}{a}\)<br/>
-                    \(\lambda_1^*a^2\cdot\frac{1}{2}+\alpha=0\,\implies \lambda_1^*=-\alpha\frac{2}{a^2}\) <a href="#1_i_anchor">[i]</a>.
+                <li>when \(\alpha\neq 0\):
+                    <div class="equation">\(ax^*+\alpha=0,\,ax^*=-\alpha\,\implies x^*=-\frac{\alpha}{a}\)</div>
+                    <div class="equation">\(\lambda_1^*a^2\cdot\frac{1}{2}+\alpha=0\,\implies \lambda_1^*=-\alpha\frac{2}{a^2}\) <a href="#1_i_anchor">[i]</a>.</div>
                 </li>
             </ol>
         </p>
@@ -188,12 +188,12 @@
         <p>so the partial derivatives of the constraint are linearly independent, and LICQ holds <a href="#3_i_anchor">[i]</a>.</p>
 
         <div class="hint">
-            <p>To proof that a point is actual solution, we need <b>second-order optimality condition</b> for a local minimum.</p>
+            <p>To prove that a point is actual solution, we need <b>second-order optimality condition</b> for a local minimum.</p>
 
             <p><span class="important">th</span>: \(x^*\) is a [weak]strong local minimum iff:
                 <ol type="1">
                     <li>KKT conditions holds, and</li>
-                    <li>\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*).\)</li>
+                    <li><div class="equation">\(w^T\nabla^2\mathcal{L}(x^*,\lambda^*)w\,[\geq]>0\,\,\,\forall w\in\mathcal{C}(x^*,\lambda^*).\)</div></li>
                 </ol>
             Note that if the condition (2) holds with \(\geq\) or positive semi-definite, we are speaking about the necessary condition (for a weak local minimum). If with \(>\) or positive definite, we are speaking about the sufficient condition (for a strong local minimum).
             </p>
@@ -204,7 +204,7 @@
             $$</div>
             <p>where \(\mathcal{F}(x^*)\) is a linearized feasible direction.</p>
         </div>
-        <p>To find if a point is an actual solution, we need to proof the second-order optimality condition, and thus first we need to find the critical cone \(w\in\mathcal{F}(x^*)\iff w=(w_1, w_2)\) that satisfies \(\nabla c_1(x^*)^Tw=0\) (since from the KKT conditions we know that \(\lambda_1\neq 0\), we need the second part of the multiplication to be zero):</p>
+        <p>To find if a point is an actual solution, we need to prove the second-order optimality condition, and thus first we need to find the critical cone \(w\in\mathcal{F}(x^*)\iff w=(w_1, w_2)\) that satisfies \(\nabla c_1(x^*)^Tw=0\) (since from the KKT conditions we know that \(\lambda_1\neq 0\), we need the second part of the multiplication to be zero):</p>
         <div class="equation">$$
             (0\,\,\,-5)\begin{pmatrix}w_1 \\ w_2\end{pmatrix}\iff w=\begin{pmatrix}w_1 \\ 0\end{pmatrix},
         $$</div>
