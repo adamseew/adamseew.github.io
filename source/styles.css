@@ -149,8 +149,8 @@ article #inner-social-box a {
 }
 
 #social-box h2 {
-    margin: 1.2em 0 -28px 0;
-    padding: 16px 16px 0 16px;
+    margin: 28px 0 -28px 0;
+    padding: 0 16px 0 16px;
     color: #41b8dd;
 }
 
@@ -235,6 +235,7 @@ body.dark .top-menu {
 #social-box {
     background-color:#eaf6fa; 
     margin:-16px -16px -16px 16px;
+    padding: 16px 0;
 }
 
 #social-box #inner-social-box {
