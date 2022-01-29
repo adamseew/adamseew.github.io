@@ -360,7 +360,13 @@ b.conference {
     font-weight: normal !important;
 }
 
-span.conference, span.journal, span.details {
+b.others {
+    text-decoration: underline;
+    text-decoration-color: rgb(199, 241, 10);
+    font-weight: normal !important;
+}
+
+span.conference, span.journal, span.details, span.others {
     padding: .3ex 1ex .3ex 1ex;
     margin: 0 .6ex 0 .4ex;
     text-align: center;

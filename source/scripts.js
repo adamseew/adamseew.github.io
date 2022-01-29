@@ -37,6 +37,17 @@ function filter(){
             divsToHide[i].style.display = "none";
         }
     }
+    if (document.getElementById('others').checked) { 
+        var divsToHide = document.getElementsByClassName("others-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "block";
+        }
+    } else {
+        var divsToHide = document.getElementsByClassName("others-entry");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "none";
+        }
+    }
     if (document.getElementById('details').checked) { 
         var divsToHide = document.getElementsByClassName("authors-entry");
         var divsToHide2 = document.getElementsByClassName("details-entry");
