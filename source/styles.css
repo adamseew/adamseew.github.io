@@ -221,7 +221,7 @@ body.dark .top-menu {
 }
 
 .index-img-div {
-    margin: 0 13px 13px 13px;
+    margin: 7px;
     border: 6px solid white;
     max-width: 600px !important;
     float: right;
@@ -237,6 +237,16 @@ body.dark .top-menu {
 
 @media only screen and (max-width: 35.5em) {
     #social-box {
+        display: none;
+    }
+    .index-img-div {
+        margin: 7px 0px 7px 0px !important;
+        border: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 28em) {
+    div.entry div.entry-img {
         display: none;
     }
 }
@@ -402,7 +412,8 @@ div.entry {
 }
 
 div.entry div.entry-img {
-    width: 120px;
+    min-width: 130px;
+    width: 130px;
     margin: auto;
 }
 
