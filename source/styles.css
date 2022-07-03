@@ -34,25 +34,16 @@
     src: local('Signika SemiBold'), local('Signika-SemiBold'), url(signika-semibold-latin.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }  
+body {
+    margin: .1px !important;
+}
 
 body:not(.dark) {
     text-rendering: optimizeLegibility;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 0px;
-    border-right: 0px;
-    border-color: #a9e97e;
-    border-image-slice: 1;
 }
 
 body.dark {
     text-rendering: optimizeLegibility;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 0px;
-    border-right: 0px;
-    border-image: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(241, 88, 0) 100%);
-    border-image-slice: 1;
     background-color: rgb(42, 42, 42);
     color: whitesmoke;
 }
@@ -69,13 +60,18 @@ body.black article {
 }
 
 article div.inner {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
+    padding-left: 7% !important;
+    padding-right: 7% !important;
 }
 
 article {
     background-color: white;
     padding: 16px !important;
+}
+
+#menu-div1 {
+    border-left: 1px solid rgb(208, 219, 223);
+    margin-right: -1px;
 }
 
 header, #menu-div1, nav {
@@ -92,22 +88,34 @@ body.black header, body.black #menu-div1, body.black nav {
 
 #menu-header {
     position: fixed;
-    width: inherit;
+    width: 100%;
 }
 
-h1, h2, h3, h4 {
+h1 {
     /*Signika, or the old font*/
     font-family: "Signika", Helvetica, sans-serif !important;
     color: rgb(0,51,102);
     font-weight: 600;
-}
-
-h1 {
     font-size: xx-large !important;
 }
 
 h2, h3, h4 {
-    font-size: x-large !important;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: initial;
+}
+
+article h2:not(.pure-u-sm-2-3), h3, h4 {
+    margin-right: calc(-7% - 32px);
+    margin-left: calc(-7% - 32px);
+    padding-right: calc(7% + 32px);
+    padding-left: calc(7% + 32px);
+}
+
+article div.pure-u-sm-2-3 h2 {
+    margin-right: calc(-7% - 21px);
+    margin-left: calc(-7% - 21px);
+    padding-right: calc(7% + 21px);
+    padding-left: calc(7% + 21px);
 }
 
 .pure-menu-link {
@@ -213,7 +221,8 @@ body.dark .top-menu {
 }
 
 .index-img-div {
-    padding: 0 19px 9px 19px;
+    margin: 0 13px 13px 13px;
+    border: 6px solid white;
     max-width: 600px !important;
     float: right;
 }
@@ -233,8 +242,8 @@ body.dark .top-menu {
 }
 
 #social-box {
-    background-color:#eaf6fa; 
-    margin:-16px -16px -16px 16px;
+    border-left: 1px solid #d7dee0;
+    margin:-16px -17px -16px 16px;
     padding: 16px 0;
 }
 
@@ -243,7 +252,6 @@ body.dark .top-menu {
 }
 
 #social-box #inner-social-box .header, #social-box #inner-social-box .header .left, #social-box #inner-social-box .body {
-    background-color: #f1fcff;
     border: 1px solid #d0dbdf;
 }
 
@@ -262,8 +270,7 @@ body.dark .top-menu {
 }
 
 #social-box #inner-social-box .header {
-    margin-top: 10px;
-    padding: 10.8px 16px 10.8px 16px;
+    padding: 10.8px 16px 6.8px 16px;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
     color: #777;
@@ -391,6 +398,24 @@ span.grayisch, div.grayisch {
 div.entry {
     padding: 2ex;
     margin: 0 -16px 5px -16px;
+    display: flex !important;
+}
+
+div.entry div.entry-img {
+    width: 120px;
+    margin: auto;
+}
+
+div.entry div.entry-dat {
+    flex: 1;
+    margin: auto;
+}
+
+div.entry div.entry-img img {
+    width: calc(100% - 15px);
+    border: 1px solid #cacaca;
+    margin-right: 15px;
+    box-shadow: 3px 3px #d8d8d8;
 }
 
 div.exercise {
