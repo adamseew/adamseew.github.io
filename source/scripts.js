@@ -18,7 +18,7 @@ function filter(){
     if (document.getElementById('journal').checked) { 
         var divsToHide = document.getElementsByClassName("journal-entry");
         for(var i = 0; i < divsToHide.length; i++){
-            divsToHide[i].style.display = "block";
+            divsToHide[i].style.display = "flex";
         }
     } else {
         var divsToHide = document.getElementsByClassName("journal-entry");
@@ -29,7 +29,7 @@ function filter(){
     if (document.getElementById('conference').checked) { 
         var divsToHide = document.getElementsByClassName("conference-entry");
         for(var i = 0; i < divsToHide.length; i++){
-            divsToHide[i].style.display = "block";
+            divsToHide[i].style.display = "flex";
         }
     } else {
         var divsToHide = document.getElementsByClassName("conference-entry");
@@ -40,7 +40,7 @@ function filter(){
     if (document.getElementById('others').checked) { 
         var divsToHide = document.getElementsByClassName("others-entry");
         for(var i = 0; i < divsToHide.length; i++){
-            divsToHide[i].style.display = "block";
+            divsToHide[i].style.display = "flex";
         }
     } else {
         var divsToHide = document.getElementsByClassName("others-entry");
