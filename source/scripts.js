@@ -14,6 +14,20 @@ function ready(callback){
     });
 }
 
+var imageURLs = [
+    "_dsc06822.jpg"
+  , "_img3127.jpg"
+  , "_img3145.jpg"
+];
+
+function getImageTag() {
+    var img = '<img class=\"pure-img\" src=\"';
+    var randomIndex = Math.floor(Math.random() * imageURLs.length);
+    img += imageURLs[randomIndex];
+    img += '\" alt=\"Adam Seewald\"/>';
+    return img;
+}
+
 function filter(){
     if (document.getElementById('journal').checked) { 
         var divsToHide = document.getElementsByClassName("journal-entry");
