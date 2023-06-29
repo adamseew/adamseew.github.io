@@ -28,6 +28,15 @@ function getImageTag() {
     return img;
 }
 
+function parallax() {
+    var s = document.getElementById("about-me-container");
+    var yPos = 0 - window.scrollY/4.2;  
+    s.style.marginTop = yPos + "px";}
+
+window.addEventListener("scroll", function(){
+    parallax(); 
+});
+
 function filter(){
     if (document.getElementById('journal').checked) { 
         var divsToHide = document.getElementsByClassName("journal-entry");

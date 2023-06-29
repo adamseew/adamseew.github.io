@@ -233,9 +233,11 @@ body.dark .top-menu {
 }
 
 #about-me-container {
-    margin: 0px -16px 24px -16px;
+    margin-right: -16px;
+    margin-bottom: 24px;
+    margin-left: -16px;
     padding: 0px 16px;
-    box-shadow: 0px 4px 12px #ececec;
+    box-shadow: 0px 4px 12px #c1c1c1;
     border-radius: 6px;
 }
 
@@ -243,6 +245,7 @@ body.dark .top-menu {
     margin-top: -2.6em;
     z-index: 100;
     position: relative;
+    color: white;
 }
 
 #about-me-box-header {
@@ -251,7 +254,12 @@ body.dark .top-menu {
     padding: 10.8px 16px 16px 16px;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
-    background-color: white;
+    background-color: rgb(71, 107, 144);
+    color: white;
+}
+
+#about-me-box-content a {
+    color: white !important;
 }
 
 #about-me-box-content {
@@ -259,10 +267,10 @@ body.dark .top-menu {
     padding: 0px 16px;
     margin: -10.8px -16px;
     border: 1px solid #d0dbdf;
-    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(234,246,250,1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(234,246,250,1) 100%);
-    background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(234,246,250,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&quot;#ffffff&quot;,endColorstr=&quot;#eaf6fa&quot;,GradientType=1);
+    background: -moz-linear-gradient(165deg, rgb(71, 107, 144) 0%, rgb(71, 107, 144) 80%, rgb(116, 132, 147) 100%);
+    background: -webkit-linear-gradient(165deg, rgb(71, 107, 144) 0%, rgb(71, 107, 144) 80%, rgb(116, 132, 147) 100%);
+    background: linear-gradient(165deg, rgb(71, 107, 144) 0%, rgb(71, 107, 144) 80%, rgb(116, 132, 147) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&quot;#476B90&quot;,endColorstr=&quot;#748493&quot;,GradientType=1);
 }
 
 #social-box {
