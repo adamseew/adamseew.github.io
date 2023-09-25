@@ -159,6 +159,11 @@ nav div:not(.pure-menu-horizontal) li:not(.pure-menu-selected) a  {
     padding-left: 28px;
 }
 
+span.grayisch, div.grayisch {
+    color: gray;
+    font-size: smaller;
+}
+
 article a:hover:not(.source):not(.twitter):not(.twitter-link) {
     color: #41b8dd !important;
     text-decoration: underline;
