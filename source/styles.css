@@ -268,7 +268,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
 }
 
 #news-box {
-    padding: 16px 0;
+    padding: 1px 0;
     margin-right:-17px;
     background-color: #46fbae;
 }
