@@ -4,17 +4,11 @@
     src: url('VT323-Regular.ttf') format('truetype');
 }
 
-@viewport {
-    zoom: 1.33;
-    min-zoom: 1.0;
-}
-
 html, body {
     margin: 0px;
 }
 
 body {
-    zoom: 1.33;
     text-rendering: optimizeLegibility;
 }
 
