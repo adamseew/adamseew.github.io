@@ -158,7 +158,7 @@ ready(function(){
         }
     }
 
-    var x = window.matchMedia('(min-width: 48em)');
+    var x = window.matchMedia('(min-width: 768px)');
     adjust_menu(x);
     x.addListener(adjust_menu);
 

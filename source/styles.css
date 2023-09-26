@@ -205,7 +205,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     position: relative;
 }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 768px) {
     #menu-div1 {
         margin-top: 0px !important;
         margin-left: 16px !important;
@@ -237,7 +237,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     background: none;
 }
 
-@media only screen and (max-width: 35.5em) {
+@media only screen and (max-width: 568px) {
     #social-box {
         display: none;
     }
@@ -246,7 +246,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     }
 }
 
-@media only screen and (max-width: 28em) {
+@media only screen and (max-width: 448px) {
     div.entry div.entry-img {
         display: none;
     }
