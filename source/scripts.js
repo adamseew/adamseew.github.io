@@ -89,6 +89,7 @@ ready(function(){
     var menu_width = '20%'; //pure-u-md-1-5
     var article_width = '80%'; //pure-u-md-4-5
 
+    var is_expanded = false;
     function expand_menu() {
         document.getElementsByClassName("pure-u-md-1-5")[0].style.width = menu_width;
         document.getElementsByClassName("pure-u-md-4-5")[0].style.width = article_width;
@@ -96,6 +97,7 @@ ready(function(){
         for(var i = 0; i < menu_link.length; i++){
             menu_link[i].innerHTML = menu_link[i].getAttribute('alt');
         }
+        is_expanded = true;
     }
 
     var is_in_menu;
@@ -117,6 +119,7 @@ ready(function(){
         for(var i = 0; i < menu_link.length; i++){
             menu_link[i].innerHTML = '[ ' + menu_link[i].innerHTML[2] + ' ]';
         }
+        is_expanded = false;
     }
 
     document.getScroll = function() {
@@ -132,11 +135,19 @@ ready(function(){
         }
     }
 
-    function adjust_menu(x) {
-        if (x.matches) {
+    function viewport() {
+        var e = window, a = 'inner';
+        if (!('innerWidth' in window )) {
+            a = 'client';
+            e = document.documentElement || document.body;
+        }
+        return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+    }
+    
+    function fixviewport() {
+        if (viewport().width>768) {
             auto_hide = true;
             document.getElementsByClassName("pure-u-md-4-5")[0].style.width = article_width;
-
             document.getElementById('menu-div2').classList.remove('pure-menu-horizontal');
             document.getElementById('menu-div2').classList.remove('pure-menu-scrollable');
             document.getElementById('menu-div1').classList.remove('top-menu');
@@ -158,11 +169,7 @@ ready(function(){
         }
     }
 
-    var x = window.matchMedia('(min-width: 768px)');
-    adjust_menu(x);
-    x.addListener(adjust_menu);
-
-    window.onscroll = function(){ 
+    function fixscroll() {
         // check if the 'mobile menu' is on
         if (!auto_hide)
             return;
@@ -175,5 +182,21 @@ ready(function(){
             document.getElementsByClassName("pure-u-md-4-5")[0].addEventListener('mouseover', shrink_menu);
             shrink_menu();
         }
+    }
+
+    window.onresize = function() { 
+        fixviewport();
+        if (auto_hide) {
+            if (is_expanded)
+                expand_menu();
+            else
+                shrink_menu();
+        }
+    };
+
+    fixviewport();
+
+    window.onscroll = function(){ 
+        fixscroll();
     };
 });

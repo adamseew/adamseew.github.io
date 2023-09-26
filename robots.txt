@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /friends/*
 Disallow: /cv/*
-Disallow: twitter.html
