@@ -82,7 +82,7 @@ h3, h4 {
 
 .img-info {
     text-align: center;
-    font-size: smaller;
+    font-size: small;
     margin-top: .1em;
 }
 
@@ -194,17 +194,47 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     align-self: flex-end;
 }
 
+#inner-social-box .social-container {
+    box-shadow: 0px 4px 12px #25252547;
+    margin-bottom: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 5px;
+    background: linear-gradient(165deg, rgb(121, 255, 198) 0%, rgb(168, 255, 218) 80%, rgb(232, 255, 245) 100%);
+    z-index: 1;
+    position: relative;
+}
+
 @media only screen and (max-width: 48em) {
     #menu-div1 {
         margin-top: 0px !important;
         margin-left: 16px !important;
+        z-index: 2;
     }
     #about-me-container #inner {
         z-index: 0 !important;
     }
+    #inner-social-box .social-container {
+        margin-right: -10px !important;
+        border-radius: 5px 0 0 5px !important;
+    }
+    .social-container .header {
+        border-radius: 5px 0 0 0 !important;
+    }
+    .social-container .body {
+        border-radius: 0 0 0 5px !important;
+    }
     footer {
         display: none !important;
     }
+    .social-container .header, .social-container .body {
+        border-right: none !important;
+    }    
+}
+
+#about-me-box-header:hover, #about-me-box-content:hover {
+    background-color: rgb(63, 99, 137) !important;
+    background: none;
 }
 
 @media only screen and (max-width: 35.5em) {
@@ -307,7 +337,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     display: flex;
 }
 
-#inner-social-box .header:hover, #inner-social-box .body:hover {
+#inner-social-box .header:hover, #inner-social-box .body:hover, #inner-social-box .lonely:hover {
     background-color: #6affbe;
 }
 
@@ -335,6 +365,17 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover 
     height: 0;
     padding-bottom: 100%;
     background-size: cover, contain;
+}
+
+#inner-social-box .social-container, #inner-social-box .social-container2 {
+    box-shadow: 0px 4px 12px #25252547;
+    margin-bottom: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 5px;
+    background: linear-gradient(165deg, rgb(121, 255, 198) 0%, rgb(168, 255, 218) 80%, rgb(232, 255, 245) 100%);
+    z-index: 1;
+    position: relative;
 }
 
 div.lonely {
@@ -433,10 +474,19 @@ div.entry div.entry-img img {
 footer {
     bottom: 21px;
     padding-left: 28px;
-    font-size: smaller;
+    font-size: small;
     position: fixed;
     white-space: nowrap;
 }
+
+footer .first-i {
+    margin-left: 3ex;
+}
+
+footer i {
+    margin-left: .3ex;
+}
+
 
 footer a, footer a:visited{
     color: #777;
