@@ -154,6 +154,8 @@ ready(function () {
         viewportWidth = viewport().width;
     };
     fixViewport();
+    var mediaMatch = window.matchMedia('(min-width: 768px)');
+    mediaMatch.addListener(fixViewport());
     window.onscroll = function () {
         fixScroll();
     };
