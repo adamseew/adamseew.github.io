@@ -8,7 +8,7 @@ html, body{
 body{
 	text-rendering: optimizeLegibility;
 }
-.pure-g{
+.pure-g:not(.social-img){
 	background-color: white;
 }
 article div.inner{
