@@ -1,12 +1,10 @@
 # CV Signature Verification
 
-![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/adamseew/adamseew.github.io?display_timestamp=committer&style=plastic)
-
 If you want to verify that you have a trusted version of my CV, first download the file: [seewald_cv_signed.pdf](https://adamseewald.cc/cv/seewald_cv_signed.pdf).
 
-You will now need to:
+You will need to:
 - import the public key, 
-- check my signed CV's signature. 
+- check its signature. 
 
 On a UNIX-based system, you can use [GPG](https://www.gnupg.org/) for this purpose.
 
