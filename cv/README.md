@@ -1,10 +1,13 @@
-# CV Signature Verification
+# CV Signature Verification 
 
-If you want to verify that you have a trusted version of my CV, first download the file: [seewald_cv_signed.pdf](https://adamseewald.cc/cv/seewald_cv_signed.pdf).
+If you want to verify the digital signature on my CV, first download the signed CV using the file: [seewald_cv_signed.pdf](https://adamseewald.cc/cv/seewald_cv_signed.pdf).
 
 You will need to:
-- import the public key, 
-- check its signature. 
+- import the [public key](https://adamseewald.cc/cv/seewald_cv_pubkey.asc), 
+- check the signature. 
+
+
+## Verification on a UNIX-based system
 
 On a UNIX-based system, you can use [GPG](https://www.gnupg.org/) for this purpose.
 
