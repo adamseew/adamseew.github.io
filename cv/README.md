@@ -4,7 +4,7 @@ If you want to verify that you have a trusted version of my CV, first download t
 
 You will now need to:
 - import the public key, 
-- check its signature. 
+- check my signed CV's signature. 
 
 On a UNIX-based system, you can use [GPG](https://www.gnupg.org/) for this purpose.
 
