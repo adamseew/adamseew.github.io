@@ -44,6 +44,12 @@ article #left-home-article{
 #menu-header{
 	width: 100%;
 }
+.header-fixed{
+	position: fixed;
+}
+.header-shadow{
+	box-shadow: 2px 2px 6px #25252547;
+}
 h1{
 	color: rgb(0,51,102);
 	font-family: "VT323", Helvetica, sans-serif !important;

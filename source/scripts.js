@@ -106,6 +106,8 @@ ready(function () {
     function fixViewport() {
         if (viewport().width > 768) {
             autoHide = true;
+            document.getElementById('menu-header').classList.remove('header-shadow');
+            document.getElementById('menu-header').classList.add('header-fixed');
             document.getElementsByClassName("pure-u-md-4-5")[0].style.width = articleWidth;
             document.getElementById('menu-div2').classList.remove('pure-menu-horizontal');
             document.getElementById('menu-div2').classList.remove('pure-menu-scrollable');
@@ -114,6 +116,11 @@ ready(function () {
             document.getElementById('menu-div2').classList.add('custom-restricted-width');
         } else {
             autoHide = false;
+            if (window.pageYOffset <= 0)
+                document.getElementById('menu-header').classList.remove('header-shadow');
+            else
+                document.getElementById('menu-header').classList.add('header-shadow');
+            document.getElementById('menu-header').classList.remove('header-fixed');
             document.getElementsByClassName("pure-u-md-1-5")[0].style.transition = 'none';
             document.getElementsByClassName("pure-u-md-4-5")[0].style.transition = 'none';
             document.getElementsByClassName("pure-u-md-1-5")[0].removeEventListener('mouseover', expandMenu);
@@ -128,12 +135,21 @@ ready(function () {
         }
     }
     function fixScroll() {
-        if (!autoHide) return;
+        if (!autoHide) {
+            document.getElementById('menu-header').classList.remove('header-fixed');
+            if (window.pageYOffset <= 0)
+                document.getElementById('menu-header').classList.remove('header-shadow');
+            else
+                document.getElementById('menu-header').classList.add('header-shadow');
+            return;
+        }
+        document.getElementById('menu-header').classList.remove('header-shadow');
+        document.getElementById('menu-header').classList.add('header-fixed');
         if (window.pageYOffset <= 0) {
             document.getElementsByClassName("pure-u-md-1-5")[0].removeEventListener('mouseover', expandMenu);
             document.getElementsByClassName("pure-u-md-4-5")[0].removeEventListener('mouseover', shrinkMenu);
             expandMenu();
-        } else if (window.pageYOffset > 0) {
+        } else {
             document.getElementsByClassName("pure-u-md-1-5")[0].addEventListener('mouseover', expandMenu);
             document.getElementsByClassName("pure-u-md-4-5")[0].addEventListener('mouseover', shrinkMenu);
             shrinkMenu();
