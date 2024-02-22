@@ -20,9 +20,8 @@ article{
 	padding: 16px !important;
 }
 #menu-div1{
-	border-left: 1px solid rgb(208, 219, 223);
+	border-left: none;
 	margin-bottom: 16px;
-	margin-left: -1px;
 	margin-top: 16px;
 }
 #nav{
@@ -254,8 +253,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 }
 #social-box{
 	background-color: #46fbae;
-	border-left: 1px solid #d7dee0;
-	margin: 0 -17px 0 16px;
+	margin: 0 -16px 0 16px;
 	padding: 16px 0;
 }
 #news-box{
