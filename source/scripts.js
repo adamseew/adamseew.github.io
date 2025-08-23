@@ -130,18 +130,27 @@ ready(function () {
             document.getElementById('menu-div2').classList.add('pure-menu-horizontal');
             document.getElementById('menu-div2').classList.add('pure-menu-scrollable');
             document.getElementById('menu-div1').classList.add('top-menu');
-            document.getElementsByTagName('body')[0].style.paddingTop = '48px';
+            document.getElementsByTagName('body')[0].style.paddingTop = '42px';
             document.getElementById('menu-div2').classList.remove('custom-restricted-width');
         }
     }
-    function fixScroll() {
+    function fixScroll(prevScrollpos) {
         if (!autoHide) {
             document.getElementById('menu-header').classList.remove('header-fixed');
             if (window.pageYOffset <= 0)
                 document.getElementById('menu-header').classList.remove('header-shadow');
             else
                 document.getElementById('menu-header').classList.add('header-shadow');
-            return;
+            var currentScrollPos = window.pageYOffset;
+            var menu = document.getElementById("menu-div1");
+            if (currentScrollPos > 42)
+                if (prevScrollpos > currentScrollPos)
+                    menu.style.top = "0";
+                else
+                    menu.style.top = "-" + (menu.offsetHeight + 3) + "px";
+            else
+                menu.style.top = "0";
+            return currentScrollPos;
         }
         document.getElementById('menu-header').classList.remove('header-shadow');
         document.getElementById('menu-header').classList.add('header-fixed');
@@ -154,6 +163,7 @@ ready(function () {
             document.getElementsByClassName("pure-u-md-4-5")[0].addEventListener('mouseover', shrinkMenu);
             shrinkMenu();
         }
+        return 0;
     }
     window.onresize = function () {
         fixViewport();
@@ -172,7 +182,8 @@ ready(function () {
     fixViewport();
     var mediaMatch = window.matchMedia('(min-width: 768px)');
     mediaMatch.addListener(fixViewport);
+    var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
-        fixScroll();
+        prevScrollpos = fixScroll(prevScrollpos);
     };
 });
