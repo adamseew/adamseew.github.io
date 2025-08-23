@@ -171,7 +171,7 @@ ready(function () {
     };
     fixViewport();
     var mediaMatch = window.matchMedia('(min-width: 768px)');
-    mediaMatch.addListener(fixViewport());
+    mediaMatch.addListener(fixViewport);
     window.onscroll = function () {
         fixScroll();
     };

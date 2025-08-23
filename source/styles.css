@@ -176,6 +176,10 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 	z-index: 1;
 }
 @media only screen and (max-width: 768px){
+	#inner-social-box .social-container{
+		border-radius: 5px 0 0 5px !important;
+		margin-right: -10px !important;
+	}
 	#menu-div1{
 		margin-left: 16px !important;
 		margin-top: 0px !important;
@@ -183,10 +187,6 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 	}
 	#about-me-container #inner{
 		z-index: 0 !important;
-	}
-	#inner-social-box .social-container{
-		border-radius: 5px 0 0 5px !important;
-		margin-right: -10px !important;
 	}
 	.social-container .header{
 		border-radius: 5px 0 0 0 !important;
@@ -207,10 +207,21 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 }
 @media only screen and (max-width: 568px){
 	#social-box{
-		display: none;
+		margin: 0 -16px 0 0 !important;
+		padding: 16px !important;
 	}
-	#news-item{
-		display: inline-block !important;
+	#inner-social-box .social-container{
+		border-radius: 5px !important;
+	}
+	.social-container .header{
+		border-radius: 5px 5px 0 0 !important;
+	}
+	.social-container .body{
+		border-radius: 0 0 5px 5px !important;
+	}
+
+	.social-container .header, .social-container .body{
+		border-right: 1px solid #9d9d9d !important;
 	}
 }
 @media only screen and (max-width: 448px){
