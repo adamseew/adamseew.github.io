@@ -190,10 +190,13 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 		margin-left: 16px !important;
 		margin-top: 0px !important;
 		z-index: 2;
+		transition: top 300ms !important;
 	}
 	header, #menu-div1, nav{
 		border-radius: 0 0 0 6.4px;
-		transition: top 300ms !important;
+	}
+	#menu-div2{
+		padding: .5em !important;
 	}
 	#about-me-container #inner{
 		z-index: 0 !important;

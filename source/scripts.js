@@ -12,7 +12,7 @@ function getImageTag() {
     var img = '<div id="index-img-div"><img class="pure-img" src="';
     var randomIndex = Math.floor(Math.random() * imageURLs.src.length);
     img += imageURLs.src[randomIndex];
-    img += '" alt="'
+    img += '" alt="';
     img += imageURLs.alt[randomIndex];
     img += '"></div><div class="img-info"><i class="fa fa-circle-info"></i> ';
     img += imageURLs.desc[randomIndex];
@@ -90,7 +90,7 @@ ready(function () {
             sy = r.scrollTop || b.scrollTop || 0;
             return [sx, sy];
         }
-    }
+    };
     function viewport() {
         var windowObject = window, dimension = 'inner';
         if (!('innerWidth' in windowObject)) {
