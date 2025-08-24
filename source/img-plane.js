@@ -48,8 +48,16 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.height = (imgDiv.offsetHeight + 60) + 'px';
     }
 
-    adjustPlane();
-    adjustSectionHeight();
+    function initParallax() {
+        adjustPlane();
+        adjustSectionHeight();
+    }
+
+    if (document.readyState === 'complete') {
+        initParallax();
+    } else {
+        window.addEventListener('load', initParallax);
+    }
 
     window.addEventListener('resize', function() {
         adjustPlane();
@@ -79,30 +87,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: false });
 
-    let touchStartX = 0;
     let lastTouchY = 0;
 
     window.addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
         lastTouchY = e.touches[0].clientY;
     }, { passive: true });
 
     window.addEventListener('touchmove', function(e) {
-        const touchX = e.touches[0].clientX;
         const touchY = e.touches[0].clientY;
-        const deltaX = touchStartX - touchX;
-        const deltaY = lastTouchY - touchY;
-        touchStartX = touchX;
+        const delta = lastTouchY - touchY;
         lastTouchY = touchY;
 
         let handled = false;
 
-        if (deltaX > 0 && scrollProgress < 1) {
-            scrollProgress += deltaX / distance;
+        if (delta > 0 && scrollProgress < 1) {
+            scrollProgress += delta / distance;
             scrollProgress = Math.min(1, scrollProgress);
             handled = true;
-        } else if (deltaX < 0 && scrollProgress > 0 && window.scrollY === 0) {
-            scrollProgress += deltaX / distance;
+        } else if (delta < 0 && scrollProgress > 0 && window.scrollY === 0) {
+            scrollProgress += delta / distance;
             scrollProgress = Math.max(0, scrollProgress);
             handled = true;
         }
