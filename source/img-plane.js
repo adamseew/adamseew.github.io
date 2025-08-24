@@ -1,51 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var plane = document.getElementById('plane');
+    const plane = document.getElementById('plane');
     if (!plane) return;
 
-    var items = plane.getElementsByClassName('item');
+    const items = plane.getElementsByClassName('item');
     if (!items.length) return;
 
-    var inner = document.querySelector('#left-home-article .inner');
+    const inner = document.querySelector('#left-home-article .inner');
     if (!inner) return;
 
-    var scrollProgress = 0;
-    var offsetStart = 0;
+    let scrollProgress = 0;
+    let distance = 0;
 
     function getInnerContentWidth(el) {
-        var style = getComputedStyle(el);
-        var paddingLeft = parseFloat(style.paddingLeft) || 0;
-        var paddingRight = parseFloat(style.paddingRight) || 0;
+        const style = getComputedStyle(el);
+        const paddingLeft = parseFloat(style.paddingLeft) || 0;
+        const paddingRight = parseFloat(style.paddingRight) || 0;
         return el.clientWidth - paddingLeft - paddingRight;
     }
 
     function adjustPlane() {
-        var contentWidth = getInnerContentWidth(inner);
-
+        const contentWidth = getInnerContentWidth(inner);
         plane.style.width = contentWidth * items.length + 'px';
 
-        var distance = 0;
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i];
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
             item.style.width = contentWidth + 'px';
-            var img = item.querySelector('img');
-            var legend = item.querySelector('.img-info');
+            const img = item.querySelector('img');
+            const legend = item.querySelector('.img-info');
             if (img) img.style.width = contentWidth + 'px';
             if (legend) legend.style.width = contentWidth + 'px';
-            distance = distance + item.offsetLeft;
         }
+
+        if (items.length > 1) {
+            distance = items[1].offsetLeft - items[0].offsetLeft;
+        }
+
         plane.style.left = -distance * scrollProgress + 'px';
     }
 
     function adjustSectionHeight() {
-        var section = document.querySelector('.section');
+        const section = document.querySelector('.section');
         if (!section) return;
 
-        var imgDiv = section.querySelector('#img1');
+        const imgDiv = section.querySelector('#img1');
         if (!imgDiv) return;
 
-        var totalHeight = imgDiv.offsetHeight + 60;
-
-        section.style.height = totalHeight + 'px';
+        section.style.height = (imgDiv.offsetHeight + 60) + 'px';
     }
 
     adjustPlane();
@@ -60,18 +60,54 @@ document.addEventListener('DOMContentLoaded', function() {
     new ResizeObserver(adjustSectionHeight).observe(document.querySelector('.section'));
 
     window.addEventListener('wheel', function(e) {
-        var delta = e.deltaY;
-        var scrollY = window.scrollY || document.documentElement.scrollTop;
-        var distance = items[1].offsetLeft - items[0].offsetLeft;
+        const delta = e.deltaY;
+        let handled = false;
 
-        if (delta > 0 && scrollY >= offsetStart && scrollProgress < 1) {
+        if (delta > 0 && scrollProgress < 1) {
             scrollProgress += delta / distance;
             scrollProgress = Math.min(1, scrollProgress);
-            plane.style.left = -distance * scrollProgress + 'px';
-            e.preventDefault();
-        } else if (delta < 0 && scrollProgress > 0 && scrollY <= offsetStart) {
+            handled = true;
+        } else if (delta < 0 && scrollProgress > 0 && window.scrollY === 0) {
             scrollProgress += delta / distance;
             scrollProgress = Math.max(0, scrollProgress);
+            handled = true;
+        }
+
+        if (handled) {
+            plane.style.left = -distance * scrollProgress + 'px';
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    let touchStartX = 0;
+    let lastTouchY = 0;
+
+    window.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        lastTouchY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchmove', function(e) {
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const deltaX = touchStartX - touchX;
+        const deltaY = lastTouchY - touchY;
+        touchStartX = touchX;
+        lastTouchY = touchY;
+
+        let handled = false;
+
+        if (deltaX > 0 && scrollProgress < 1) {
+            scrollProgress += deltaX / distance;
+            scrollProgress = Math.min(1, scrollProgress);
+            handled = true;
+        } else if (deltaX < 0 && scrollProgress > 0 && window.scrollY === 0) {
+            scrollProgress += deltaX / distance;
+            scrollProgress = Math.max(0, scrollProgress);
+            handled = true;
+        }
+
+        if (handled) {
             plane.style.left = -distance * scrollProgress + 'px';
             e.preventDefault();
         }
