@@ -23,6 +23,7 @@ article{
 	border-left: none;
 	margin-bottom: 16px;
 	margin-top: 16px;
+	z-index: 0;
 }
 #nav{
 	margin: -16px 0;
@@ -49,6 +50,8 @@ article #left-home-article{
 }
 .header-shadow{
 	box-shadow: 0px 1px 2px #25252530 !important;
+	border-left: 1px solid #cacaca;
+	border-bottom: 1px solid #cacaca;
 }
 .header-shadow-none{
 	box-shadow: none;
@@ -155,19 +158,8 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 	top: 0;
 	width: calc(100% - 10px) !important;
 }
-#index-img-div{
-	display: flex;
-	justify-content: center;
-	margin: 0 0 .5em 0em;
-	max-height: 333px;
-	position: relative;
-}
-#index-img-div img{
-	align-self: flex-end;
-	display: inline-block;
-	max-width: 500px;
-	object-fit: cover;
-	width: 100%;
+.index-img-div img{
+	max-width: 500px !important;
 	border-radius: 6.4px;
 	box-shadow: 0px 6.4px 64px #072848;
 }
@@ -287,6 +279,7 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 	background-color: #46fbae;
 	margin: 0 -16px 0 16px;
 	padding: 16px 0;
+	z-index: 1;
 }
 #news-box{
 	background-color: #46fbae;

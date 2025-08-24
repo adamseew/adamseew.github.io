@@ -1,0 +1,38 @@
+body, html{
+  overflow-x: hidden;
+}
+.section{
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+.plane{
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 200%;
+  gap: 20px;
+  height: 100%;
+  position: relative;
+  left: 0;
+}
+.item{
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.plane .pure-img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.plane .img-info{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
