@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let scrollProgress = 0;
     let distance = 0;
+    const touchSpeed = 1.5;
 
     function getInnerContentWidth(el) {
         const style = getComputedStyle(el);
@@ -18,23 +19,57 @@ document.addEventListener('DOMContentLoaded', function() {
         return el.clientWidth - paddingLeft - paddingRight;
     }
 
-    function adjustPlane() {
+    function adjustPlaneBeforeImageLoad() {
         const contentWidth = getInnerContentWidth(inner);
-        plane.style.width = contentWidth * items.length + 'px';
 
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
-            item.style.width = contentWidth + 'px';
             const img = item.querySelector('img');
             const legend = item.querySelector('.img-info');
+
+            item.style.width = contentWidth + 'px';
+            if (img) {
+                img.style.width = contentWidth + 'px';
+                img.style.height = 'auto';
+                img.style.maxHeight = '500px';
+            }
+            if (legend) legend.style.width = contentWidth + 'px';
+        }
+
+        plane.style.width = contentWidth * items.length + 'px';
+        if (items.length > 1) {
+            distance = items[1].offsetLeft - items[0].offsetLeft;
+        }
+        plane.style.left = -distance * scrollProgress + 'px';
+
+        const section = document.querySelector('.section');
+        if (section) {
+            let maxHeight = 0;
+            for (let i = 0; i < items.length; i++) {
+                const img = items[i].querySelector('img');
+                if (img) maxHeight = Math.max(maxHeight, Math.min(img.naturalHeight * (contentWidth / img.naturalWidth), 500));
+            }
+            section.style.height = (maxHeight + 60) + 'px';
+        }
+    }
+
+    function adjustPlane() {
+        const contentWidth = getInnerContentWidth(inner);
+
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const img = item.querySelector('img');
+            const legend = item.querySelector('.img-info');
+
+            item.style.width = contentWidth + 'px';
             if (img) img.style.width = contentWidth + 'px';
             if (legend) legend.style.width = contentWidth + 'px';
         }
 
+        plane.style.width = contentWidth * items.length + 'px';
         if (items.length > 1) {
             distance = items[1].offsetLeft - items[0].offsetLeft;
         }
-
         plane.style.left = -distance * scrollProgress + 'px';
     }
 
@@ -49,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initParallax() {
+        adjustPlaneBeforeImageLoad();
         adjustPlane();
         adjustSectionHeight();
     }
@@ -101,11 +137,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let handled = false;
 
         if (delta > 0 && scrollProgress < 1) {
-            scrollProgress += delta / distance;
+            scrollProgress += (delta / distance) * touchSpeed;
             scrollProgress = Math.min(1, scrollProgress);
             handled = true;
         } else if (delta < 0 && scrollProgress > 0 && window.scrollY === 0) {
-            scrollProgress += delta / distance;
+            scrollProgress += (delta / distance) * touchSpeed;
             scrollProgress = Math.max(0, scrollProgress);
             handled = true;
         }
