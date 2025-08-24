@@ -9,6 +9,11 @@ html, body{
 body{
 	text-rendering: optimizeLegibility;
 }
+h1, h2, .pure-menu-link, #inner-social-box .header .left, div.lonely a{
+    font-family: "VT323", Helvetica, sans-serif !important;
+    display: inline-block;
+    min-width: max-content;
+}
 .pure-g:not(.social-img){
 	background-color: white;
 }
@@ -59,7 +64,6 @@ article #left-home-article{
 }
 h1{
 	color: rgb(0,51,102);
-	font-family: "VT323", Helvetica, sans-serif !important;
 	font-size: xxx-large !important;
 	font-weight: 600;
 }
@@ -90,11 +94,9 @@ h3, h4{
 }
 h2{
 	color: #274666;
-	font-family: "VT323", Helvetica, sans-serif !important;
 	font-size: xx-large;
 }
 .pure-menu-link{
-	font-family: "VT323", Helvetica, sans-serif !important;
 	font-size: larger;
 	font-weight: 300;
 }
@@ -158,11 +160,6 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 	position: fixed;
 	top: 0;
 	width: calc(100% - 10px) !important;
-}
-.index-img-div img{
-	max-width: 500px !important;
-	border-radius: 6.4px;
-	box-shadow: 0px 6.4px 64px #072848;
 }
 #inner-social-box .social-container{
 	background: linear-gradient(165deg, rgb(121, 255, 198) 0%, rgb(168, 255, 218) 80%, rgb(232, 255, 245) 100%);
@@ -299,7 +296,6 @@ a.source:hover, .journal-entry a.source:hover, .conference-entry a.source:hover{
 #inner-social-box .header .left{
 	background-color: inherit !important;
 	border: none !important;
-	font-family: "VT323", Helvetica, sans-serif !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -357,7 +353,6 @@ div.lonely{
 	padding: 10.8px 16px 6.8px 16px;
 }
 div.lonely a{
-	font-family: "VT323", Helvetica, sans-serif;
 	font-size: large;
 }
 code{

@@ -1,38 +1,51 @@
 body, html{
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 .section{
-  position: relative;
-  width: 100%;
-  overflow: visible;
+    position: relative;
+    width: 100%;
+    overflow: visible;
 }
 .plane{
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 200%;
-  gap: 20px;
-  height: 100%;
-  position: relative;
-  left: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    height: auto;
 }
 .item{
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.index-img-div{
+    position: relative;
+    overflow: hidden;
 }
 .plane .pure-img{
-  max-width: 100%;
-  height: auto;
-  display: block;
+    display: block;
+    max-width: 500px !important;
+    position: relative;
+}
+.index-img-div{
+    box-shadow: 0px 6.4px 64px #072848;
+    border-radius: 6.4px;
+}
+.index-img-div img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6.4px;
+    object-fit: cover;
 }
 .plane .img-info{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  margin-top: 10px;
-  text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
 }
