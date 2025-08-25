@@ -10,9 +10,8 @@ body{
 	text-rendering: optimizeLegibility;
 }
 h1, h2, .pure-menu-link, #inner-social-box .header .left, div.lonely a{
-    font-family: "VT323", Helvetica, sans-serif !important;
+    font-family: "VT323", 'Courier New', monospace !important;
     display: inline-block;
-    min-width: max-content;
 }
 .pure-g:not(.social-img){
 	background-color: white;

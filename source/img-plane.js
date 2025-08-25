@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var images = [
+        { src: "img3127.jpg", alt: "Adam Seewald's photo from IROS'22", desc: "Me at IROS'22. Kyoto, Japan, 2022" },
+        { src: "dsc06822.jpg", alt: "Adam Seewald's photo from Odense, Denmark", desc: "Me in front of the Technical Faculty building. Odense, Denmark, 2020" },
+    ];
+    let idx1 = Math.floor(Math.random() * images.length);
+    let idx2;
+    do { idx2 = Math.floor(Math.random() * images.length); } while (idx2 === idx1);
+    [idx1, idx2].forEach((idx, i) => {
+        let img = document.querySelector(`#img${i+1} img`);
+        let info = document.querySelector(`#info${i+1}`);
+        let pre = new Image();
+        pre.src = images[idx].src;
+        pre.onload = () => {
+            img.src = images[idx].src;
+            img.alt = images[idx].alt;
+            info.innerHTML = `<i class="fa fa-circle-info"></i> ${images[idx].desc}`;
+        };
+    });
     const plane = document.getElementById('plane');
     if (!plane) return;
 

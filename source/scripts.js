@@ -5,20 +5,6 @@ function ready(callback) {
         if (document.readyState === 'complete') callback();
     });
 }
-var imageURLs = { src: ["img3127.jpg","dsc06822.jpg"],
-                  desc:["Me at IROS'22. Kyoto, Japan, 2022","Me in front of the Technical Faculty building. Odense, Denmark, 2020"],
-                  alt: ["Adam Seewald's photo from IROS'22", "Adam Seewald's photo from Odense, Denmark"]};
-function getImageTag() {
-    var img = '<div id="index-img-div"><img class="pure-img" src="';
-    var randomIndex = Math.floor(Math.random() * imageURLs.src.length);
-    img += imageURLs.src[randomIndex];
-    img += '" alt="';
-    img += imageURLs.alt[randomIndex];
-    img += '"></div><div class="img-info"><i class="fa fa-circle-info"></i> ';
-    img += imageURLs.desc[randomIndex];
-    img += '</div>';
-    return img;
-}
 function toggleEntries(type, display) {
     var divs = document.getElementsByClassName(type + "-entry");
     for (var i = 0; i < divs.length; i++) {
