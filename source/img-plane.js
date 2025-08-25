@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var images = [
         { src: "img3127.jpg", alt: "Adam Seewald's photo from IROS'22", desc: "Me at IROS'22. Kyoto, Japan, 2022" },
         { src: "dsc06822.jpg", alt: "Adam Seewald's photo from Odense, Denmark", desc: "Me in front of the Technical Faculty building. Odense, Denmark, 2020" },
+        { src: "img8986.jpg", alt: "Adam Seewald and Hiroshi Ishiguro", desc: "Me with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://spectrum.ieee.org/hiroshi-ishiguro-the-man-who-made-a-copy-of-himself\">Hiroshi Ishiguro</a>. Tokyo, Japan, 2024" },
+
     ];
     let idx1 = Math.floor(Math.random() * images.length);
     let idx2;
