@@ -128,23 +128,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let lastTouchY = 0;
     window.addEventListener('touchstart', e => { lastTouchY = e.touches[0].clientY; }, { passive: true });
-    window.addEventListener('touchmove', e => {
+    const epsilon = 0.01;
+    const TOP_TOLERANCE = 2;
+    window.addEventListener('touchmove', function(e) {
         const touchY = e.touches[0].clientY;
         const delta = lastTouchY - touchY;
         lastTouchY = touchY;
-        let handled = false;
-        if (delta > 0 && scrollProgress < 1) {
+        const canScrollForward  = (delta > 0 && scrollProgress < 1 - epsilon);
+        const canScrollBackward = (delta < 0 && scrollProgress > 0 + epsilon && window.scrollY <= TOP_TOLERANCE);
+        if (canScrollForward || canScrollBackward) {
             scrollProgress += (delta / distance) * touchSpeed;
-            scrollProgress = Math.min(1, scrollProgress);
-            handled = true;
-        } else if (delta < 0 && scrollProgress > 0 && window.scrollY === 0) {
-            scrollProgress += (delta / distance) * touchSpeed;
-            scrollProgress = Math.max(0, scrollProgress);
-            handled = true;
-        }
-        if (handled) {
+            scrollProgress = Math.min(1, Math.max(0, scrollProgress));
             plane.style.left = -distance * scrollProgress + 'px';
-            e.preventDefault();
-        }
+            if (scrollProgress > epsilon && scrollProgress < 1 - epsilon)
+                e.preventDefault();
+        } else 
+            scrollProgress = Math.min(1, Math.max(0, scrollProgress));
     }, { passive: false });
 });
