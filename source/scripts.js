@@ -116,7 +116,7 @@ ready(function () {
             document.getElementById('menu-div2').classList.add('pure-menu-horizontal');
             document.getElementById('menu-div2').classList.add('pure-menu-scrollable');
             document.getElementById('menu-div1').classList.add('top-menu');
-            document.getElementsByTagName('body')[0].style.paddingTop = '42px';
+            document.getElementsByTagName('body')[0].style.paddingTop = '62px';
             document.getElementById('menu-div2').classList.remove('custom-restricted-width');
         }
     }
@@ -129,7 +129,7 @@ ready(function () {
                 document.getElementById('menu-header').classList.add('header-shadow');
             var currentScrollPos = window.pageYOffset;
             var menu = document.getElementById("menu-div1");
-            if (currentScrollPos > 42)
+            if (currentScrollPos > 54)
                 if (prevScrollpos > currentScrollPos)
                     menu.style.top = "0";
                 else
